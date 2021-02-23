@@ -1,0 +1,58 @@
+-var catalog1=['Бизнес','ИТ и ПО','Финансы и бухгалтерия','Маркетинг и реклама','Здоворье и фитнес','Архитектура и дизайн','Стиль жизни ','Фотография','Музыка','Академические дисциплины','Иностранные языки','Другие','Управление проектами','Финансовый анализ','HTML5, CSS и  JavaScript для начинающих','Управление проектами','Финансовый анализ','HTML5, CSS и  JavaScript для начинающих'];
+header
+    .h_row
+        .h_col_left
+            .logo
+                a(href="#")
+                    img(src="img/logo.svg")
+            .h_menu
+                button.btn.h_menu_toggler Курсы
+                .h_menu_nav
+                    ul
+                        for c_item, index in catalog1
+                            li
+                                a(href="#")=c_item
+
+
+
+        .h_col_center
+            button.h_search_toggler
+            .h_search
+                form.h_form
+                    button.btn_submit(type="submit")
+                    input(type="text" placeholder="Чему бы вы хотели научиться? ")
+                    button.btn_reset(type="reset")
+        .h_col_right
+            .become_teacher_box
+                a.become_teacher_link(href="#") Стать преподавателем
+            .h_user_box
+                if page.title ==='Главная'
+                    ul.h_user_menu
+                        li
+                            a.btn.has_border(href="#") Вход
+                        li
+                            a.btn.btn_blue(href="#") Регистрация
+                else
+                    ul.h_account_menu
+                        li
+                            a.whish_link(href="#")
+                        li
+                            a.messages_link(href="#")
+                        li.position-relative
+                            button.dropdown_toggler
+                                .user_photo(style="background-image:url(img/examples/Ellipse14.png)")
+                            ul.dropdown_menu
+                                li
+                                    a(href="#") Личные данные
+                                li
+                                    a(href="#") Моё обучение
+                                li
+                                    a(href="#") История оплаты
+                                li
+                                    a(href="#") Выйти
+
+
+
+
+
+

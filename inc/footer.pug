@@ -1,0 +1,50 @@
+footer
+    .container
+        .footer_row
+            .col_left
+                .logo
+                    a(href="#")
+                        img(src="img/f_logo.svg")
+            .col_right
+                .main_menu
+                    ul.nav
+                        for menu_item , index in main_menu
+                            if index === 2
+                                li.has_child
+                                    a(href="#")=menu_item
+                                    span.arrow
+                                    ul.sub_menu
+                                        for sub_item, index in sub_menu
+                                            if index === 10
+                                                li.has_child
+                                                    a(href="#")=sub_item
+                                                    span.arrow
+                                                    ul.sub_menu
+                                                        -for (var l3 = 1; l3 <= 10; l3++)
+                                                            li
+                                                                a(href="#") Пункт меню 3-го уровня #{l3}
+
+                                            else
+                                                li
+                                                    a(href="#")=sub_item
+                            else
+                                li
+                                    a(href="#")=menu_item
+
+        .footer_row
+            .col_left
+                .footer_text
+                    p 2020 Частное предприятие «Мастер Гарден», УНП 190252909<br> 18 декабря 2008, Минский городской исполнительный комитет <br>Внесены в Торговый реестр Республики Беларусь 05 марта 2019 г.
+            .col_right
+                .row
+                    .col
+                        ul.f_menu
+                            li
+                                a(href="#") Договор публичной оферты
+                            li
+                                a(href="#") Правовая информация
+                    .col
+                        a.phone(href="tel: +375 (29) 676-16-66")
+                            span +375 (29) 676-16-66
+                    .col
+                        .location г. Минск, ул. Шаранговича, 7А <br>Режим работы: <br>Пн-Птн - с 8.30 до 18.00 <br>Сб-Вскр - выходной.
