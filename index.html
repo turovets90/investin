@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Главная1</title>
+    <title>Главная</title>
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
@@ -54,27 +54,432 @@
         <div class="h_col_right">
           <div class="become_teacher_box"><a class="become_teacher_link" href="#">Стать преподавателем</a></div>
           <div class="h_user_box">
-            <ul class="h_account_menu">
-              <li><a class="whish_link" href="#"></a></li>
-              <li><a class="messages_link" href="#"></a></li>
-              <li class="position-relative">
-                <button class="dropdown_toggler">
-                  <div class="user_photo" style="background-image:url(img/examples/Ellipse14.png)"></div>
-                </button>
-                <ul class="dropdown_menu">
-                  <li><a href="#">Личные данные</a></li>
-                  <li><a href="#">Моё обучение</a></li>
-                  <li><a href="#">История оплаты</a></li>
-                  <li><a href="#">Выйти</a></li>
-                </ul>
-              </li>
+            <ul class="h_user_menu">
+              <li><a class="btn has_border" href="#">Вход</a></li>
+              <li><a class="btn btn_blue" href="#">Регистрация</a></li>
             </ul>
           </div>
         </div>
       </div>
     </header>
-    <!--include inc/index/content.pug-->
-    <!--include inc/footer.pug-->
+    <main>
+      <div class="main_banner" style="background-image:url(img/examples/pexels-olia-danilevich-50881881.png)">
+        <div class="container">
+          <div class="main_banner_content">
+            <div class="title">Начни учиться с INVESTIN прямо <span class="line">сейчас!</span></div>
+            <div class="sub_title">Выбери интересующую тему и зарегистрируйся</div><a class="btn btn_orange" href="#">Приступить</a>
+          </div>
+        </div>
+      </div>
+      <section class="bg_light">
+        <div class="container">
+          <div class="text_center">
+            <div class="h2 line">Курсы онлайн</div>
+            <div class="sub_title">Мы собрали для Вас самые актуальные онлайн-курсы на любой вкус</div>
+          </div>
+          <ul class="c_nav">
+            <li class="active"><a href="#">Бизнес</a></li>
+            <li><a href="#">ИТ и ПО</a></li>
+            <li><a href="#">Дизайн</a></li>
+            <li><a href="#">Стиль жизни</a></li>
+            <li><a href="#">Музыка</a></li>
+            <li><a href="#">Фитнес</a></li>
+          </ul>
+          <div class="row cards_list">
+            <div class="col">
+              <div class="card_item"><a class="card_item_img" href="#" style="background-image:url(img/examples/c_1.png)"></a>
+                <div class="card_item_body">
+                  <div><a class="card_item_name" href="#">HTML5, CSS и  JavaScript для начинающих</a>
+                    <div class="teachers">Владимир Приходько, Денис Грушевский, Катерина Кулакова</div>
+                  </div>
+                  <div>
+                    <div class="rating"><strong>4,5</strong><span class="stars"><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star empty"></span></span>
+                      <div class="counter">12 отзывов</div>
+                    </div>
+                    <div class="price_box">
+                      <div class="price">1 560 бел. руб.</div>
+                      <div class="old_price">1 680 бел. руб.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card_item"><a class="card_item_img" href="#" style="background-image:url(img/examples/c_2.png)">
+                  <div class="label discount">Скидка</div></a>
+                <div class="card_item_body">
+                  <div><a class="card_item_name" href="#">Corporate Finance Management</a>
+                    <div class="teachers">Владимир Приходько</div>
+                  </div>
+                  <div>
+                    <div class="rating"><strong>4,5</strong><span class="stars"><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star empty"></span></span>
+                      <div class="counter">12 отзывов</div>
+                    </div>
+                    <div class="price_box">
+                      <div class="price">1 560 бел. руб.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card_item"><a class="card_item_img" href="#" style="background-image:url(img/examples/c_3.png)"></a>
+                <div class="card_item_body">
+                  <div><a class="card_item_name" href="#">HTML5, CSS и  JavaScript для начинающих</a>
+                    <div class="teachers">Владимир Приходько, Денис Грушевский, Катерина Кулакова</div>
+                  </div>
+                  <div>
+                    <div class="rating"><strong>4,5</strong><span class="stars"><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star empty"></span></span>
+                      <div class="counter">12 отзывов</div>
+                    </div>
+                    <div class="price_box">
+                      <div class="price">1 560 бел. руб.</div>
+                      <div class="old_price">1 680 бел. руб.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="text_center"><a class="btn btn_blue" href="#">Показать все курсы</a></div>
+        </div>
+      </section>
+      <section>
+        <div class="container">
+          <div class="text_center">
+            <div class="h2 line mb_55">Рекомендуемые курсы</div>
+          </div>
+          <div class="row cards_list cards_slider">
+            <div class="col">
+              <div class="card_item"><a class="card_item_img" href="#" style="background-image:url(img/examples/c_1.png)"></a>
+                <div class="card_item_body">
+                  <div><a class="card_item_name" href="#">HTML5, CSS и  JavaScript для начинающих</a>
+                    <div class="teachers">Владимир Приходько, Денис Грушевский, Катерина Кулакова</div>
+                  </div>
+                  <div>
+                    <div class="rating"><strong>4,5</strong><span class="stars"><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star empty"></span></span>
+                      <div class="counter">12 отзывов</div>
+                    </div>
+                    <div class="price_box">
+                      <div class="price">1 560 бел. руб.</div>
+                      <div class="old_price">1 680 бел. руб.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card_item"><a class="card_item_img" href="#" style="background-image:url(img/examples/c_2.png)">
+                  <div class="label discount">Скидка</div></a>
+                <div class="card_item_body">
+                  <div><a class="card_item_name" href="#">Corporate Finance Management</a>
+                    <div class="teachers">Владимир Приходько</div>
+                  </div>
+                  <div>
+                    <div class="rating"><strong>4,5</strong><span class="stars"><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star empty"></span></span>
+                      <div class="counter">12 отзывов</div>
+                    </div>
+                    <div class="price_box">
+                      <div class="price">1 560 бел. руб.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card_item"><a class="card_item_img" href="#" style="background-image:url(img/examples/c_3.png)"></a>
+                <div class="card_item_body">
+                  <div><a class="card_item_name" href="#">HTML5, CSS и  JavaScript для начинающих</a>
+                    <div class="teachers">Владимир Приходько, Денис Грушевский, Катерина Кулакова</div>
+                  </div>
+                  <div>
+                    <div class="rating"><strong>4,5</strong><span class="stars"><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star empty"></span></span>
+                      <div class="counter">12 отзывов</div>
+                    </div>
+                    <div class="price_box">
+                      <div class="price">1 560 бел. руб.</div>
+                      <div class="old_price">1 680 бел. руб.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card_item"><a class="card_item_img" href="#" style="background-image:url(img/examples/c_4.png)"></a>
+                <div class="card_item_body">
+                  <div><a class="card_item_name" href="#">HTML5, CSS и  JavaScript для начинающих</a>
+                    <div class="teachers">Владимир Приходько, Денис Грушевский, Катерина Кулакова</div>
+                  </div>
+                  <div>
+                    <div class="rating"><strong>4,5</strong><span class="stars"><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star empty"></span></span>
+                      <div class="counter">12 отзывов</div>
+                    </div>
+                    <div class="price_box">
+                      <div class="price">1 560 бел. руб.</div>
+                      <div class="old_price">1 680 бел. руб.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card_item"><a class="card_item_img" href="#" style="background-image:url(img/examples/c_5.png)"></a>
+                <div class="card_item_body">
+                  <div><a class="card_item_name" href="#">HTML5, CSS и  JavaScript для начинающих</a>
+                    <div class="teachers">Владимир Приходько, Денис Грушевский, Катерина Кулакова</div>
+                  </div>
+                  <div>
+                    <div class="rating"><strong>4,5</strong><span class="stars"><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star empty"></span></span>
+                      <div class="counter">12 отзывов</div>
+                    </div>
+                    <div class="price_box">
+                      <div class="price">1 560 бел. руб.</div>
+                      <div class="old_price">1 680 бел. руб.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card_item"><a class="card_item_img" href="#" style="background-image:url(img/examples/c_6.png)"></a>
+                <div class="card_item_body">
+                  <div><a class="card_item_name" href="#">HTML5, CSS и  JavaScript для начинающих</a>
+                    <div class="teachers">Владимир Приходько, Денис Грушевский, Катерина Кулакова</div>
+                  </div>
+                  <div>
+                    <div class="rating"><strong>4,5</strong><span class="stars"><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star empty"></span></span>
+                      <div class="counter">12 отзывов</div>
+                    </div>
+                    <div class="price_box">
+                      <div class="price">1 560 бел. руб.</div>
+                      <div class="old_price">1 680 бел. руб.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="container">
+          <div class="text_center">
+            <div class="h2 line mb_55">Популярные курсы</div>
+          </div>
+          <div class="row cards_list">
+            <div class="col">
+              <div class="card_item"><a class="card_item_img" href="#" style="background-image:url(img/examples/c_1.png)"></a>
+                <div class="card_item_body">
+                  <div><a class="card_item_name" href="#">HTML5, CSS и  JavaScript для начинающих</a>
+                    <div class="teachers">Владимир Приходько, Денис Грушевский, Катерина Кулакова</div>
+                  </div>
+                  <div>
+                    <div class="rating"><strong>4,5</strong><span class="stars"><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star empty"></span></span>
+                      <div class="counter">12 отзывов</div>
+                    </div>
+                    <div class="price_box">
+                      <div class="price">1 560 бел. руб.</div>
+                      <div class="old_price">1 680 бел. руб.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card_item"><a class="card_item_img" href="#" style="background-image:url(img/examples/c_2.png)">
+                  <div class="label discount">Скидка</div></a>
+                <div class="card_item_body">
+                  <div><a class="card_item_name" href="#">Corporate Finance Management</a>
+                    <div class="teachers">Владимир Приходько</div>
+                  </div>
+                  <div>
+                    <div class="rating"><strong>4,5</strong><span class="stars"><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star empty"></span></span>
+                      <div class="counter">12 отзывов</div>
+                    </div>
+                    <div class="price_box">
+                      <div class="price">1 560 бел. руб.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card_item"><a class="card_item_img" href="#" style="background-image:url(img/examples/c_3.png)"></a>
+                <div class="card_item_body">
+                  <div><a class="card_item_name" href="#">HTML5, CSS и  JavaScript для начинающих</a>
+                    <div class="teachers">Владимир Приходько, Денис Грушевский, Катерина Кулакова</div>
+                  </div>
+                  <div>
+                    <div class="rating"><strong>4,5</strong><span class="stars"><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star empty"></span></span>
+                      <div class="counter">12 отзывов</div>
+                    </div>
+                    <div class="price_box">
+                      <div class="price">1 560 бел. руб.</div>
+                      <div class="old_price">1 680 бел. руб.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="bg_light">
+        <div class="container">
+          <div class="text_center">
+            <div class="h2 line mb_55">Что о нас говорят<br> наши студенты</div>
+          </div>
+          <div class="row reviews_list cards_slider">
+            <div class="col">
+              <div class="review_item">
+                <div>
+                  <div class="review_author_photo" style="background-image:url(img/examples/Ellipse8.png)"><span class="quotes"></span></div>
+                  <div class="review_text">
+                    <p>Специалисты по подбору кадров обратили внимание на профессиональный сертификат в моей профиле LinkedIn. На собеседовании они сказали, что полученные мной знания впечатляют. Меня приняли на работу!</p>
+                  </div>
+                </div>
+                <div>
+                  <hr/>
+                  <div class="review_author_name">Приходько Владимир</div>
+                  <div class="review_author_position">Директор веб-студии</div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="review_item">
+                <div>
+                  <div class="review_author_photo" style="background-image:url(img/examples/Ellipse8.png)"><span class="quotes"></span></div>
+                  <div class="review_text">
+                    <p>Специалисты по подбору кадров обратили внимание на профессиональный сертификат в моей профиле LinkedIn.</p>
+                  </div>
+                </div>
+                <div>
+                  <hr/>
+                  <div class="review_author_name">Приходько Владимир</div>
+                  <div class="review_author_position">Директор веб-студии</div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="review_item">
+                <div>
+                  <div class="review_author_photo" style="background-image:url(img/examples/Ellipse8.png)"><span class="quotes"></span></div>
+                  <div class="review_text">
+                    <p>Специалисты по подбору кадров обратили внимание на профессиональный сертификат в моей профиле LinkedIn. На собеседовании они сказали, что полученные мной знания впечатляют. Меня приняли на работу!</p>
+                  </div>
+                </div>
+                <div>
+                  <hr/>
+                  <div class="review_author_name">Приходько Владимир</div>
+                  <div class="review_author_position">Директор веб-студии</div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="review_item">
+                <div>
+                  <div class="review_author_photo" style="background-image:url(img/examples/Ellipse8.png)"><span class="quotes"></span></div>
+                  <div class="review_text">
+                    <p>Специалисты по подбору кадров обратили внимание на профессиональный сертификат в моей профиле LinkedIn. На собеседовании они сказали, что полученные мной знания впечатляют. Меня приняли на работу!</p>
+                  </div>
+                </div>
+                <div>
+                  <hr/>
+                  <div class="review_author_name">Приходько Владимир</div>
+                  <div class="review_author_position">Директор веб-студии</div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="review_item">
+                <div>
+                  <div class="review_author_photo" style="background-image:url(img/examples/Ellipse8.png)"><span class="quotes"></span></div>
+                  <div class="review_text">
+                    <p>Специалисты по подбору кадров обратили внимание на профессиональный сертификат в моей профиле LinkedIn. На собеседовании они сказали, что полученные мной знания впечатляют. Меня приняли на работу!</p>
+                  </div>
+                </div>
+                <div>
+                  <hr/>
+                  <div class="review_author_name">Приходько Владимир</div>
+                  <div class="review_author_position">Директор веб-студии</div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="review_item">
+                <div>
+                  <div class="review_author_photo" style="background-image:url(img/examples/Ellipse8.png)"><span class="quotes"></span></div>
+                  <div class="review_text">
+                    <p>Специалисты по подбору кадров обратили внимание на профессиональный сертификат в моей профиле LinkedIn. На собеседовании они сказали, что полученные мной знания впечатляют. Меня приняли на работу!</p>
+                  </div>
+                </div>
+                <div>
+                  <hr/>
+                  <div class="review_author_name">Приходько Владимир</div>
+                  <div class="review_author_position">Директор веб-студии</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="container">
+        <div class="f_row">
+          <div class="f_col_left">
+            <div class="logo"><a href="#"><img src="img/e-invest_12.svg"/></a></div>
+            <ul>
+              <li><a href="#">Пользовательское соглашение</a></li>
+              <li><a href="#">Договор комиссии</a></li>
+            </ul>
+            <div class="copyright">© Investin LTD., 2020 Все права защищены.</div>
+          </div>
+          <div class="f_col_center">
+            <div class="row f_menu_row">
+              <div class="col">
+                <div class="f_title">Курсы</div>
+                <ul class="column3">
+                  <li><a href="#">Бизнес</a></li>
+                  <li><a href="#">Музыка</a></li>
+                  <li><a href="#">Стиль жизни</a></li>
+                  <li><a href="#">Дизайн</a></li>
+                  <li><a href="#">ИТ и ПО</a></li>
+                  <li><a href="#">Фитнес</a></li>
+                </ul><a class="show_more" href="#">Все категории</a>
+              </div>
+              <div class="col">
+                <div class="f_title">Общее</div>
+                <ul class="column2">
+                  <li><a href="#">О проекте</a></li>
+                  <li><a href="#">Стать преподавателем</a></li>
+                  <li><a href="#">Справка и поддержка</a></li>
+                  <li><a href="#">Наши контакты</a></li>
+                </ul>
+              </div>
+            </div>
+            <ul class="pay_list">
+              <li><img src="img/Visa.png"/></li>
+              <li><img src="img/Mastercard.png"/></li>
+              <li><img src="img/BASE.png"/></li>
+            </ul>
+          </div>
+          <div class="f_col_right"><a class="btn btn_blue" href="#">Написать нам</a>
+            <ul class="social_menu">
+              <li><a href="#"><img class="icon" src="img/icons/mail.svg"/></a></li>
+              <li><a href="#"><img class="icon" src="img/icons/telegarm.svg"/></a></li>
+              <li><a href="#"><img class="icon" src="img/icons/facebook.svg"/></a></li>
+              <li><a href="#"><img class="icon" src="img/icons/vk.svg"/></a></li>
+              <li><a href="#"><img class="icon" src="img/icons/instagram.svg"/></a></li>
+            </ul>
+            <div class="dev"><img src="img/icons/dev.svg"/>
+              <div class="text">Разработка сайта <br>Farba Studio</div>
+            </div>
+          </div>
+        </div>
+        <div class="f_bottom">Индивидуальный предприниматель Авонькин Денис Алексеевич, УНП 121215454, Свидетельство выдано горисполкомом г. Минска 10.10.2020 г.</div>
+      </div>
+    </footer>
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/jquery.fancybox.min.js"></script>
     <script src="js/slick.js"></script>

@@ -51,6 +51,51 @@ $(document).ready(function(){
 
 
 
+    if($('.cards_slider > div').length > 3){
+        $('.cards_slider').slick({
+            slidesToShow:3,
+            slidesToScroll: 1,
+            dots: true,
+            arrows: true,
+            infinite: false,
+            responsive: [
+
+                {
+                    breakpoint: 991,
+                    settings: {
+                        slidesToShow: 2
+                    }
+                },
+                {
+                    breakpoint: 767,
+                    settings: {
+                        slidesToShow: 1
+                    }
+                }
+            ]
+        });
+    }else if($(window).innerWidth() < 767 && $('.cards_slider > div').length > 1){
+        $('.cards_slider').slick({
+            autoplay: false,
+            dots: true,
+            arrows: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            infinite: false
+        });
+    }else if($(window).innerWidth() < 991 && $('.cards_slider > div').length > 2){
+        $('.cards_slider').slick({
+            autoplay: false,
+            dots: true,
+            arrows: true,
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            infinite: false
+        });
+    }
+
+
+
     /*
 
         $('.main_menu .arrow').click(function(){
