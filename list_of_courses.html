@@ -141,126 +141,379 @@
           <div class="row">
             <div class="col sidebar">
               <div class="filter_box">
-                <div class="filter_title">Фильтр</div>
-                <div class="filter_group">
-                  <div class="filter_group_title">Рейтинг</div>
-                  <ul>
-                    <li>
-                      <div class="custom_checkbox">
-                        <input type="checkbox" id="checkbox_0_0"/>
-                        <label for="checkbox_0_0">4,5 и выше</label>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="custom_checkbox">
-                        <input type="checkbox" id="checkbox_0_1"/>
-                        <label for="checkbox_0_1">4,0 - 4,5</label>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="custom_checkbox">
-                        <input type="checkbox" id="checkbox_0_2"/>
-                        <label for="checkbox_0_2">3,0 - 3,5</label>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="custom_checkbox">
-                        <input type="checkbox" id="checkbox_0_3"/>
-                        <label for="checkbox_0_3">3,0 и ниже</label>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-                <div class="filter_group">
-                  <div class="filter_group_title">Объем видео</div>
-                  <ul>
-                    <li>
-                      <div class="custom_checkbox">
-                        <input type="checkbox" id="checkbox_1_0"/>
-                        <label for="checkbox_1_0">Начальный</label>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="custom_checkbox">
-                        <input type="checkbox" id="checkbox_1_1"/>
-                        <label for="checkbox_1_1">Средний</label>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="custom_checkbox">
-                        <input type="checkbox" id="checkbox_1_2"/>
-                        <label for="checkbox_1_2">Профессиональный</label>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="custom_checkbox">
-                        <input type="checkbox" id="checkbox_1_3"/>
-                        <label for="checkbox_1_3">Все уровни</label>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-                <div class="filter_group">
-                  <div class="filter_group_title">Стоимость курса</div>
-                  <ul>
-                    <li>
-                      <div class="custom_checkbox">
-                        <input type="checkbox" id="checkbox_2_0"/>
-                        <label for="checkbox_2_0">0 - 1,5 часа</label>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="custom_checkbox">
-                        <input type="checkbox" id="checkbox_2_1"/>
-                        <label for="checkbox_2_1">2 - 3 часа</label>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="custom_checkbox">
-                        <input type="checkbox" id="checkbox_2_2"/>
-                        <label for="checkbox_2_2">3,5 - 5 часа</label>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="custom_checkbox">
-                        <input type="checkbox" id="checkbox_2_3"/>
-                        <label for="checkbox_2_3">5 часов и выше</label>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-                <div class="filter_group">
-                  <div class="filter_group_title">Уровень</div>
-                  <ul>
-                    <li>
-                      <div class="custom_checkbox">
-                        <input type="checkbox" id="checkbox_3_0"/>
-                        <label for="checkbox_3_0">Бесплатные</label>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="custom_checkbox">
-                        <input type="checkbox" id="checkbox_3_1"/>
-                        <label for="checkbox_3_1">до 30 руб.</label>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="custom_checkbox">
-                        <input type="checkbox" id="checkbox_3_2"/>
-                        <label for="checkbox_3_2">30 - 60 руб.</label>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="custom_checkbox">
-                        <input type="checkbox" id="checkbox_3_3"/>
-                        <label for="checkbox_3_3">от 60 руб.</label>
-                      </div>
-                    </li>
-                  </ul>
+                <div class="filter_title" onclick="$(this).toggleClass('act').next().slideToggle();">Фильтр</div>
+                <div class="filter_groups">
+                  <div class="filter_group">
+                    <div class="filter_group_title">Рейтинг</div>
+                    <ul>
+                      <li>
+                        <div class="custom_checkbox">
+                          <input type="checkbox" id="checkbox_0_0"/>
+                          <label for="checkbox_0_0">4,5 и выше</label>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="custom_checkbox">
+                          <input type="checkbox" id="checkbox_0_1"/>
+                          <label for="checkbox_0_1">4,0 - 4,5</label>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="custom_checkbox">
+                          <input type="checkbox" id="checkbox_0_2"/>
+                          <label for="checkbox_0_2">3,0 - 3,5</label>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="custom_checkbox">
+                          <input type="checkbox" id="checkbox_0_3"/>
+                          <label for="checkbox_0_3">3,0 и ниже</label>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="filter_group">
+                    <div class="filter_group_title">Объем видео</div>
+                    <ul>
+                      <li>
+                        <div class="custom_checkbox">
+                          <input type="checkbox" id="checkbox_1_0"/>
+                          <label for="checkbox_1_0">Начальный</label>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="custom_checkbox">
+                          <input type="checkbox" id="checkbox_1_1"/>
+                          <label for="checkbox_1_1">Средний</label>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="custom_checkbox">
+                          <input type="checkbox" id="checkbox_1_2"/>
+                          <label for="checkbox_1_2">Профессиональный</label>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="custom_checkbox">
+                          <input type="checkbox" id="checkbox_1_3"/>
+                          <label for="checkbox_1_3">Все уровни</label>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="filter_group">
+                    <div class="filter_group_title">Стоимость курса</div>
+                    <ul>
+                      <li>
+                        <div class="custom_checkbox">
+                          <input type="checkbox" id="checkbox_2_0"/>
+                          <label for="checkbox_2_0">0 - 1,5 часа</label>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="custom_checkbox">
+                          <input type="checkbox" id="checkbox_2_1"/>
+                          <label for="checkbox_2_1">2 - 3 часа</label>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="custom_checkbox">
+                          <input type="checkbox" id="checkbox_2_2"/>
+                          <label for="checkbox_2_2">3,5 - 5 часа</label>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="custom_checkbox">
+                          <input type="checkbox" id="checkbox_2_3"/>
+                          <label for="checkbox_2_3">5 часов и выше</label>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="filter_group">
+                    <div class="filter_group_title">Уровень</div>
+                    <ul>
+                      <li>
+                        <div class="custom_checkbox">
+                          <input type="checkbox" id="checkbox_3_0"/>
+                          <label for="checkbox_3_0">Бесплатные</label>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="custom_checkbox">
+                          <input type="checkbox" id="checkbox_3_1"/>
+                          <label for="checkbox_3_1">до 30 руб.</label>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="custom_checkbox">
+                          <input type="checkbox" id="checkbox_3_2"/>
+                          <label for="checkbox_3_2">30 - 60 руб.</label>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="custom_checkbox">
+                          <input type="checkbox" id="checkbox_3_3"/>
+                          <label for="checkbox_3_3">от 60 руб.</label>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="col main_content"></div>
+            <div class="col main_content">
+              <div class="sort_box">
+                <div class="item">
+                  <select class="custom_select">
+                    <option>Самые популярные</option>
+                    <option>С наивыcшим рейтингом</option>
+                    <option>Самые популярные</option>
+                    <option>Новинки</option>
+                  </select>
+                </div>
+                <div class="item on_page"><span>На странице:</span>
+                  <select class="custom_select">
+                    <option>10</option>
+                    <option>20</option>
+                    <option>50</option>
+                  </select>
+                </div>
+              </div>
+              <div class="row cards_list">
+                <div class="col">
+                  <div class="card_item"><a class="card_item_img" href="#" style="background-image:url(img/examples/c_1.png)"></a>
+                    <div class="card_item_body">
+                      <div><a class="card_item_name" href="#">HTML5, CSS и  JavaScript для начинающих</a>
+                        <p>Оценка эффективности инвестиций, расчет основных показателей</p>
+                        <div class="d_flex">
+                          <div class="teachers">Владимир Приходько<br> Денис Грушевский</div>
+                          <div class="time">3,5 часа <br>Начальный уровень</div>
+                        </div>
+                      </div>
+                      <div>
+                        <div class="rating"><strong>4,5</strong><span class="stars"><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star empty"></span></span>
+                          <div class="counter">12 отзывов</div>
+                        </div>
+                        <div class="price_box">
+                          <div class="price">1 560 бел. руб.</div>
+                          <div class="old_price">1 680 бел. руб.</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card_item"><a class="card_item_img" href="#" style="background-image:url(img/examples/c_1.png)">
+                      <div class="label discount">Скидка</div></a>
+                    <div class="card_item_body">
+                      <div><a class="card_item_name" href="#">Corporate Finance Management<img src="img/icons/crown.svg"/></a>
+                        <p>Оценка эффективности инвестиций, расчет основных показателей</p>
+                        <div class="d_flex">
+                          <div class="teachers">Владимир Приходько</div>
+                          <div class="time">3,5 часа <br>Начальный уровень</div>
+                        </div>
+                      </div>
+                      <div>
+                        <div class="rating"><strong>4,5</strong><span class="stars"><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star empty"></span></span>
+                          <div class="counter">12 отзывов</div>
+                        </div>
+                        <div class="price_box">
+                          <div class="price">1 560 бел. руб.</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card_item"><a class="card_item_img" href="#" style="background-image:url(img/examples/c_1.png)"></a>
+                    <div class="card_item_body">
+                      <div><a class="card_item_name" href="#">HTML5, CSS и  JavaScript для начинающих</a>
+                        <p>Оценка эффективности инвестиций, расчет основных показателей</p>
+                        <div class="d_flex">
+                          <div class="teachers">Владимир Приходько<br> Денис Грушевский</div>
+                          <div class="time">3,5 часа <br>Начальный уровень</div>
+                        </div>
+                      </div>
+                      <div>
+                        <div class="rating"><strong>4,5</strong><span class="stars"><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star empty"></span></span>
+                          <div class="counter">12 отзывов</div>
+                        </div>
+                        <div class="price_box">
+                          <div class="price">1 560 бел. руб.</div>
+                          <div class="old_price">1 680 бел. руб.</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card_item"><a class="card_item_img" href="#" style="background-image:url(img/examples/c_1.png)"></a>
+                    <div class="card_item_body">
+                      <div><a class="card_item_name" href="#">HTML5, CSS и  JavaScript для начинающих</a>
+                        <p>Оценка эффективности инвестиций, расчет основных показателей</p>
+                        <div class="d_flex">
+                          <div class="teachers">Владимир Приходько<br> Денис Грушевский</div>
+                          <div class="time">3,5 часа <br>Начальный уровень</div>
+                        </div>
+                      </div>
+                      <div>
+                        <div class="rating"><strong>4,5</strong><span class="stars"><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star empty"></span></span>
+                          <div class="counter">12 отзывов</div>
+                        </div>
+                        <div class="price_box">
+                          <div class="price">1 560 бел. руб.</div>
+                          <div class="old_price">1 680 бел. руб.</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card_item"><a class="card_item_img" href="#" style="background-image:url(img/examples/c_1.png)"></a>
+                    <div class="card_item_body">
+                      <div><a class="card_item_name" href="#">HTML5, CSS и  JavaScript для начинающих</a>
+                        <p>Оценка эффективности инвестиций, расчет основных показателей</p>
+                        <div class="d_flex">
+                          <div class="teachers">Владимир Приходько<br> Денис Грушевский</div>
+                          <div class="time">3,5 часа <br>Начальный уровень</div>
+                        </div>
+                      </div>
+                      <div>
+                        <div class="rating"><strong>4,5</strong><span class="stars"><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star empty"></span></span>
+                          <div class="counter">12 отзывов</div>
+                        </div>
+                        <div class="price_box">
+                          <div class="price">1 560 бел. руб.</div>
+                          <div class="old_price">1 680 бел. руб.</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card_item"><a class="card_item_img" href="#" style="background-image:url(img/examples/c_1.png)"></a>
+                    <div class="card_item_body">
+                      <div><a class="card_item_name" href="#">HTML5, CSS и  JavaScript для начинающих</a>
+                        <p>Оценка эффективности инвестиций, расчет основных показателей</p>
+                        <div class="d_flex">
+                          <div class="teachers">Владимир Приходько<br> Денис Грушевский</div>
+                          <div class="time">3,5 часа <br>Начальный уровень</div>
+                        </div>
+                      </div>
+                      <div>
+                        <div class="rating"><strong>4,5</strong><span class="stars"><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star empty"></span></span>
+                          <div class="counter">12 отзывов</div>
+                        </div>
+                        <div class="price_box">
+                          <div class="price">1 560 бел. руб.</div>
+                          <div class="old_price">1 680 бел. руб.</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card_item"><a class="card_item_img" href="#" style="background-image:url(img/examples/c_1.png)"></a>
+                    <div class="card_item_body">
+                      <div><a class="card_item_name" href="#">HTML5, CSS и  JavaScript для начинающих</a>
+                        <p>Оценка эффективности инвестиций, расчет основных показателей</p>
+                        <div class="d_flex">
+                          <div class="teachers">Владимир Приходько<br> Денис Грушевский</div>
+                          <div class="time">3,5 часа <br>Начальный уровень</div>
+                        </div>
+                      </div>
+                      <div>
+                        <div class="rating"><strong>4,5</strong><span class="stars"><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star empty"></span></span>
+                          <div class="counter">12 отзывов</div>
+                        </div>
+                        <div class="price_box">
+                          <div class="price">1 560 бел. руб.</div>
+                          <div class="old_price">1 680 бел. руб.</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card_item"><a class="card_item_img" href="#" style="background-image:url(img/examples/c_1.png)"></a>
+                    <div class="card_item_body">
+                      <div><a class="card_item_name" href="#">HTML5, CSS и  JavaScript для начинающих</a>
+                        <p>Оценка эффективности инвестиций, расчет основных показателей</p>
+                        <div class="d_flex">
+                          <div class="teachers">Владимир Приходько<br> Денис Грушевский</div>
+                          <div class="time">3,5 часа <br>Начальный уровень</div>
+                        </div>
+                      </div>
+                      <div>
+                        <div class="rating"><strong>4,5</strong><span class="stars"><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star empty"></span></span>
+                          <div class="counter">12 отзывов</div>
+                        </div>
+                        <div class="price_box">
+                          <div class="price">1 560 бел. руб.</div>
+                          <div class="old_price">1 680 бел. руб.</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card_item"><a class="card_item_img" href="#" style="background-image:url(img/examples/c_1.png)"></a>
+                    <div class="card_item_body">
+                      <div><a class="card_item_name" href="#">HTML5, CSS и  JavaScript для начинающих</a>
+                        <p>Оценка эффективности инвестиций, расчет основных показателей</p>
+                        <div class="d_flex">
+                          <div class="teachers">Владимир Приходько<br> Денис Грушевский</div>
+                          <div class="time">3,5 часа <br>Начальный уровень</div>
+                        </div>
+                      </div>
+                      <div>
+                        <div class="rating"><strong>4,5</strong><span class="stars"><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star empty"></span></span>
+                          <div class="counter">12 отзывов</div>
+                        </div>
+                        <div class="price_box">
+                          <div class="price">1 560 бел. руб.</div>
+                          <div class="old_price">1 680 бел. руб.</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card_item"><a class="card_item_img" href="#" style="background-image:url(img/examples/c_1.png)"></a>
+                    <div class="card_item_body">
+                      <div><a class="card_item_name" href="#">HTML5, CSS и  JavaScript для начинающих</a>
+                        <p>Оценка эффективности инвестиций, расчет основных показателей</p>
+                        <div class="d_flex">
+                          <div class="teachers">Владимир Приходько<br> Денис Грушевский</div>
+                          <div class="time">3,5 часа <br>Начальный уровень</div>
+                        </div>
+                      </div>
+                      <div>
+                        <div class="rating"><strong>4,5</strong><span class="stars"><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star empty"></span></span>
+                          <div class="counter">12 отзывов</div>
+                        </div>
+                        <div class="price_box">
+                          <div class="price">1 560 бел. руб.</div>
+                          <div class="old_price">1 680 бел. руб.</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="pagination">
+                <ul>
+                  <li><a class="page_prev disabled" href="#"></a></li>
+                  <li><a href="#">1</a></li>
+                  <li><a class="active" href="#">2</a></li>
+                  <li><a href="#">3</a></li>
+                  <li><span>...</span></li>
+                  <li><a href="#">7</a></li>
+                  <li><a class="page_next" href="#"></a></li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -269,7 +522,7 @@
           <div class="text_center">
             <div class="h2 line mb_55">Популярные курсы</div>
           </div>
-          <div class="row cards_list">
+          <div class="row cards_grid">
             <div class="col">
               <div class="card_item"><a class="card_item_img" href="#" style="background-image:url(img/examples/c_1.png)"></a>
                 <div class="card_item_body">

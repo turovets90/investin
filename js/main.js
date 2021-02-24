@@ -94,6 +94,9 @@ $(document).ready(function(){
         });
     }
 
+    $('select.custom_select').select2({
+        minimumResultsForSearch: -1
+    });
 
 
     /*

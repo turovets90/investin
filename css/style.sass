@@ -1066,7 +1066,7 @@ section
   @media (max-width: 1300px)
     margin-bottom: 30px
 
-.cards_list, .reviews_list
+.cards_grid, .reviews_grid
   .col
     width: 33.33%
     margin-bottom: 50px
@@ -1734,12 +1734,44 @@ section.border
 
 
 .filter_box
+  @media (max-width: 1100px)
+    margin-bottom: 20px
+  @media (max-width: 767px)
+    margin-bottom: 10px
   .filter_title
     position: relative
     display: inline-block
     padding-left: 30px
     font: 28px/$f+rem $Montserrat-bold
     margin-bottom: 30px
+    @media (min-width: 1101px)
+      pointer-events: none
+    @media (max-width: 1200px)
+      font: 24px/$f+rem $Montserrat-bold
+    @media (max-width: 1100px)
+      font: 20px/$f+rem $Montserrat-bold
+      background: $light_hover
+      padding: 10px 10px 10px 40px
+      width: 100%
+      +border-radius(5px)
+      margin-bottom: 10px
+    @media (max-width: 767px)
+      margin-bottom: 0
+      &.act
+        &:after
+          +transform(rotate(-180deg))
+
+      &:after
+        +b_a
+        right: 10px
+        top: 0
+        bottom: 0
+        margin: auto
+        width: 11px
+        height: 6px
+        +transition($transition_default)
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='11' height='6' viewBox='0 0 11 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M0.165727 0.163934C0.366615 -0.0347724 0.680975 -0.0528391 0.902494 0.10974L0.965958 0.163934L5.50001 4.64892L10.0341 0.163934C10.235 -0.0347724 10.5493 -0.0528391 10.7708 0.10974L10.8343 0.163934C11.0351 0.362639 11.0534 0.673578 10.8891 0.892691L10.8343 0.955471L5.90013 5.83605C5.69924 6.03478 5.38485 6.05284 5.16334 5.89024L5.09988 5.83605L0.165727 0.955471C-0.0552424 0.736892 -0.0552424 0.382506 0.165727 0.163934Z' fill='%23168EC4'/%3e%3c/svg%3e ")
+
     &:before
       +b_a
       left: 0
@@ -1749,16 +1781,28 @@ section.border
       width: 23px
       height: 23px
       background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='23' height='23' viewBox='0 0 23 23' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M8.65799 22L13.6731 19.6395V13.4533L21.5373 5.47779C21.8337 5.17895 22 4.7688 22 4.33928V2.59342C22 1.71262 21.3088 1 20.456 1H2.54401C1.69117 1 1 1.71262 1 2.59342V4.37921C1 4.78453 1.14877 5.17411 1.41705 5.46932L8.65799 13.4533V22Z' stroke='%23F47920' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ")
+      @media (max-width: 1100px)
+        left: 10px
+
+  .filter_groups
+    @media (max-width: 1100px)
+      display: none
 
 .filter_group
   margin-bottom: 30px
+  @media (max-width: 1100px)
+    margin-bottom: 20px
   .filter_group_title
     font-family: $Montserrat-SemiBold
     color: #252525
     margin-bottom: 5px
+    @media (max-width: 1100px)
+      margin-bottom: 0
   ul
     li
       margin-bottom: 5px
+      @media (max-width: 1100px)
+        margin-bottom: 0
 
 .custom_checkbox
   position: relative
@@ -1781,6 +1825,8 @@ section.border
       display: inline-block
       font-size: 14px/$f+rem
       cursor: pointer
+      @media (max-width: 1100px)
+        font-size: 12px/$f+rem
 
       &:before
         +b_a
@@ -1805,4 +1851,269 @@ section.border
 
 
 
+.sidebar
+  width: 21%
+  @media (max-width: 1100px)
+    width: 100%
+.main_content
+  width: 79%
+  @media (max-width: 1100px)
+    width: 100%
+.cards_list
+  margin-bottom: 15px
+  @media (max-width: 767px)
+    margin-bottom: 0
+  .col
+    margin-bottom: 30px
+    width: 100%
+    .card_item
+      +flex
+      +wrap
+      box-shadow: 0 22px 145px rgba(157, 160, 184, 0.07), 0 2.75474px 18.1562px rgba(151, 156, 193, 0.035)
+      .card_item_img
+        width: 37.5%
+        height: 100%
+        min-height: 292px
+        @media (max-width: 767px)
+          width: 100%
+          min-height: 220px
+          height: 220px
+        .label
+          left: 20px
+          top: 20px
+          right: initial
+          @media (max-width: 767px)
+            left: 15px
+            top: 15px
+
+      .card_item_body
+        width: 62.5%
+        height: auto
+        @media (max-width: 767px)
+          width: 100%
+        .card_item_name
+          +flex
+          +ai-center
+          margin-bottom: 2px
+          @media (min-width: 1201px)
+            font-size: 24px/$f+rem
+          img
+            margin-left: 15px
+          + p
+            font-size: 16px/$f+rem
+            color: #333333
+            line-height: 1.2
+            @media (max-width: 767px)
+              font-size: 14px/$f+rem
+        .d_flex
+          +flex
+          margin-bottom: 10px
+          .teachers
+            margin-right: 40px
+            @media (max-width: 767px)
+              font-size: 12px/$f+rem
+          .time
+            position: relative
+            display: inline-block
+            padding-left: 30px
+            font-size: 14px/$f+rem
+            line-height: 24px
+            @media (max-width: 767px)
+              font-size: 12px/$f+rem
+            &:before
+              +b_a
+              left: 0
+              top: 3px
+              width: 16px
+              height: 16px
+              background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M15.6833 3.76409C15.2133 3.23364 14.534 2.91659 14 2.73045V1.68182C14 1.30545 13.7013 1 13.3333 1H10.6667C9.57733 1 8.60867 1.53727 8 2.36568C7.39133 1.53727 6.42267 1 5.33333 1H2.66667C2.29867 1 2 1.30545 2 1.68182V2.73045C1.466 2.91659 0.786667 3.23364 0.316 3.76477C0.112 3.99523 0 4.30818 0 4.645L0.00133333 11.7843C0.002 15.6959 0.00199999 15.6959 0.319333 15.8957C0.558667 16.0464 0.862667 16.0286 1.08333 15.8514C3.09733 14.2252 5.17933 14.2375 7.63467 15.8875C7.74467 15.9625 7.87267 16 8 16C8.12733 16 8.25533 15.9625 8.366 15.8875C10.8213 14.2375 12.9027 14.2259 14.9173 15.8514C15.138 16.03 15.442 16.047 15.6813 15.8957C15.998 15.6959 15.998 15.6959 15.9993 11.7843L16 4.645C16 4.30818 15.888 3.99523 15.6833 3.76409ZM10.6667 2.36364H12.6667V11.1523C11.084 11.0841 9.778 11.7052 8.66667 13.0402V4.40909C8.66667 3.28136 9.564 2.36364 10.6667 2.36364ZM3.33333 2.36364H5.33333C6.436 2.36364 7.33333 3.28136 7.33333 4.40909V13.0402C6.27733 11.7727 5.04733 11.1468 3.57267 11.1468C3.49333 11.1468 3.414 11.1482 3.33333 11.1523V2.36364ZM1.33533 14.0466C1.33467 12.0482 1.334 8.16386 1.33333 5.98682L1.30467 4.67977C1.45667 4.50795 1.70333 4.34364 2 4.19977V11.9091C2 12.1095 2.086 12.2998 2.236 12.4293C2.386 12.5582 2.584 12.6155 2.77667 12.5814C3.77867 12.4102 4.90267 12.4532 6.026 13.5952C4.38467 13.0764 2.81533 13.2195 1.33533 14.0466ZM14.6667 5.98682C14.6667 8.16386 14.666 12.0482 14.6653 14.0466C13.1853 13.2195 11.616 13.0777 9.97533 13.5959C11.0993 12.4539 12.2233 12.4109 13.2247 12.582C13.4167 12.6155 13.6153 12.5589 13.7653 12.43C13.914 12.2998 14 12.1095 14 11.9091V4.19841C14.294 4.33955 14.5333 4.49568 14.6667 4.645V5.98682Z' fill='%23168EC4'/%3e%3c/svg%3e ")
+        .price_box
+          .price
+            font: 24px/$f+rem $Montserrat-bold
+            @media (max-width: 1200px)
+              font-size: 20px/$f+rem
+            @media (max-width: 1100px)
+              font-size: 18px/$f+rem
+            @media (max-width: 767px)
+              font-size: 16px/$f+rem
+            @media (max-width: 575px)
+              font-size: 14px/$f+rem
+
+.sort_box
+  +flex
+  +ai-center
+  +j-beetween
+  +wrap
+  margin-bottom: 20px
+  @media (max-width: 1100px)
+    margin-bottom: 0
+  .item
+    margin-bottom: 20px
+    @media (max-width: 767px)
+      width: 100%
+      margin-bottom: 10px
+    &.on_page
+      +flex
+      +ai-center
+      .select2-container
+        @media (max-width: 1100px)
+          max-width: 90px !important
+      > span
+        font-size: 14px/$f+rem
+        white-space: nowrap
+        display: inline-block
+        margin-right: 20px
+
+
+
+.select2-container--default
+  .select2-selection--single
+    border: 1px solid rgba(160, 159, 170, 0.33)
+    +border-radius(5px)
+    height: 40px
+    +flex
+    +ai-center
+    padding-left: 20px
+    padding-right: 20px
+.select2-container--default
+  .select2-selection--single
+    .select2-selection__rendered
+      color: #333
+      font-size: 14px/$f+rem
+      padding: 0
+      margin-right: 7px
+
+.select2-container--default
+  .select2-selection--single
+    .select2-selection__arrow
+      position: relative
+      b
+        border: 0
+        width: 11px
+        height: 6px
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='11' height='6' viewBox='0 0 11 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M0.165727 0.163934C0.366615 -0.0347724 0.680975 -0.0528391 0.902494 0.10974L0.965958 0.163934L5.50001 4.64892L10.0341 0.163934C10.235 -0.0347724 10.5493 -0.0528391 10.7708 0.10974L10.8343 0.163934C11.0351 0.362639 11.0534 0.673578 10.8891 0.892691L10.8343 0.955471L5.90013 5.83605C5.69924 6.03478 5.38485 6.05284 5.16334 5.89024L5.09988 5.83605L0.165727 0.955471C-0.0552424 0.736892 -0.0552424 0.382506 0.165727 0.163934Z' fill='%23168EC4'/%3e%3c/svg%3e ")
+
+.select2-container--default
+  &.select2-container--open
+    .select2-selection--single
+      .select2-selection__arrow
+        b
+          +transform(rotate(-180deg))
+.select2-container
+  width: auto !important
+
+
+.select2-dropdown
+  border: 0
+  margin-top: 10px
+  width: auto !important
+  .select2-results__options
+    max-height: 300px
+    border: 1px solid #DFDEE2
+    +border-radius(5px)
+    //min-width: 260px
+    background: #fff
+    &::-webkit-scrollbar
+      -webkit-appearance: none
+      width: 0
+    &::-webkit-scrollbar:vertical
+      width: 3px
+      background: #c6c8ca
+      border-radius: 3px
+    &::-webkit-scrollbar-thumb
+      border-radius: 3px
+      background-color: $blue
+    li
+      width: 100%
+      color: #333333
+      font-size: 14px/$f+rem
+      padding: 5px 45px 5px 20px
+      position: relative
+      white-space: nowrap
+      &:hover
+        background: rgba(22, 142, 196, 0.05)
+        font-family: $Montserrat-SemiBold
+        color: $blue
+      &[aria-selected="true"]
+        background: rgba(22, 142, 196, 0.05)
+        font-family: $Montserrat-SemiBold
+        color: $blue
+        &:before
+          +b_a
+          right: 20px
+          top: 0
+          bottom: 0
+          margin: auto
+          width: 16px
+          height: 12px
+          background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='16' height='12' viewBox='0 0 16 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M15.7657 0.234328C15.4533 -0.0781094 14.9468 -0.0781094 14.6343 0.234328L5.04983 9.81892L1.3657 6.1348C1.0533 5.82236 0.546797 5.82239 0.234328 6.1348C-0.0781094 6.4472 -0.0781094 6.9537 0.234328 7.26614L4.48414 11.5159C4.79645 11.8283 5.30333 11.8281 5.61552 11.5159L15.7657 1.3657C16.0781 1.0533 16.0781 0.546766 15.7657 0.234328Z' fill='%23168EC4'/%3e%3c/svg%3e ")
+
+
+body
+  overflow-x: hidden
+
+.select2-container--default
+  &.select2-container--open
+    &.select2-container--below
+      .select2-selection--single
+        +border-radius(5px)
+
+
+
+
+
+.pagination
+  +flex
+  +ai-center
+  +j-center
+  ul
+    +flex
+    +ai-center
+    +j-center
+    li
+      padding: 0 6px
+      a, span
+        +flex
+        +ai-center
+        +j-center
+        width: 40px
+        height: 40px
+        position: relative
+        font-size: 20px/$f+rem
+        color: $blue
+        +border-radius(3px)
+        @media (max-width: 1200px)
+          font-size: 18px/$f+rem
+        @media (max-width: 767px)
+          width: 30px
+          height: 30px
+          font-size: 16px/$f+rem
+        &.active
+          background: $blue
+          color: #fff
+          font-family: $Montserrat-bold
+        &.page_prev, &.page_next
+          width: 28px
+          @media (max-width: 767px)
+            width: 25px
+          &:before
+            +b_a
+            +m_a
+            width: 9px
+            height: 16px
+        &.page_next
+          &:before
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='9' height='16' viewBox='0 0 9 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M1 1L8 8L1 15' stroke='%23168EC4' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ")
+        &.page_prev
+          &:before
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='9' height='16' viewBox='0 0 9 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M8 1L1 8L8 15' stroke='%23168EC4' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ")
+        &.disabled
+          opacity: 0.1
+
+
+        &:hover
+          text-decoration: none
+.page_content
+  @media (min-width: 1201px)
+    padding-top: 65px
 

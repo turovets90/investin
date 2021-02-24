@@ -21,7 +21,7 @@ section.bg_light
                     li
                         a(href="#")=f_nav_item
 
-        .row.cards_list
+        .row.cards_grid
             -for(var c=1;c<=3;c++)
                 .col
                     .card_item
@@ -62,7 +62,7 @@ section
     .container
         .text_center
             .h2.line.mb_55 Рекомендуемые курсы
-        .row.cards_list.cards_slider
+        .row.cards_grid.cards_slider
             -for(var c=1;c<=6;c++)
                 .col
                     .card_item
@@ -103,7 +103,7 @@ section
     .container
         .text_center
             .h2.line.mb_55 Популярные курсы
-        .row.cards_list
+        .row.cards_grid
             -for(var c=1;c<=3;c++)
                 .col
                     .card_item
@@ -141,7 +141,7 @@ section.bg_light
     .container
         .text_center
             .h2.line.mb_55 Что о нас говорят<br> наши студенты
-        .row.reviews_list.cards_slider
+        .row.reviews_grid.cards_slider
             -for(var c=1;c<=6;c++)
                 .col
                     .review_item
