@@ -1,6 +1,7 @@
 //@import "bootstrap"
 @import "slick-less"
 @import "fancybox"
+@import "select2"
 
 
 =b_a()
@@ -281,6 +282,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, .bold, strong, b, .title
 
 h1, .h1
   font-size: 50px / $f+rem
+  line-height: 1.4
   @media (max-width: 1920px)
     font-size: 45px / $f+rem
   @media (max-width: 1400px)
@@ -309,6 +311,7 @@ h2, .h2
 
 h3, .h3
   font-size: 32px / $f+rem
+  margin: 20px 0
   @media (max-width: 1920px)
     font-size: 30px / $f+rem
   @media (max-width: 1400px)
@@ -586,7 +589,7 @@ header
   display: inline-block
   border: 0
   text-decoration: none
-  padding: 20px 23px
+  padding: 22px 23px
   position: relative
   @media (max-width: 1300px)
     font-size: 16px / $f+rem
@@ -615,6 +618,11 @@ header
     background: $orange
     &:hover
       background: $orange_hover
+  &.btn_dark
+    color: #fff
+    background: $dark
+    &:hover
+      background: $dark_hover
 
 
 
@@ -1469,6 +1477,331 @@ footer
       text-align: left
       padding: 10px 0
       line-height: 1.5
+
+
+
+.become_section
+  background: $orange
+  position: relative
+  z-index: 2
+  @media (min-width: 1101px)
+    padding: 0
+  &:before
+    +b_a
+    background: url(../img/bgs/become_bg.png)
+    width: 100%
+    height: 100%
+    opacity: 0.1
+    left: 0
+    top: 0
+
+  .row
+    width: 100%
+    .col
+      position: relative
+      +flex
+      +ai-center
+      @media (min-width: 1101px)
+        min-height: 346px
+      &:first-child
+        width: 45%
+        @media (max-width: 1100px)
+          width: 100%
+      &:last-child
+        width: 55%
+        @media (max-width: 1100px)
+          width: 100%
+
+
+
+  .container
+    position: relative
+
+    //min-height: 346px
+    width: 100%
+    .text
+      .title
+        color: #fff
+        font-size: 36px/$f+rem
+        line-height: 50px
+        margin-bottom: 30px
+        @media (max-width: 1400px)
+          line-height: 1.2
+          font-size: 32px/$f+rem
+        @media (max-width: 1200px)
+          font-size: 28px/$f+rem
+
+    .photo
+      position: absolute
+      +border-radius(50%)
+      background-position: center
+      background-size: cover
+      @media (max-width: 1100px)
+        display: none
+
+
+
+.title_box
+  background-size: cover
+  background-position: center
+  padding: 60px 0
+  text-align: center
+  @media (max-width: 1200px)
+    padding: 40px 0
+  @media (max-width: 767px)
+    padding: 30px 0
+  h1, .h1
+    max-width: 1090px
+    margin: auto
+
+
+
+.categories
+  .col
+    width: 25%
+    margin-bottom: 30px
+    @media (max-width: 1200px)
+      width: 33.33%
+    @media (max-width: 991px)
+      width: 50%
+    @media (max-width: 575px)
+      width: 100%
+.category_item
+  height: 310px
+  background-size: cover
+  background-position: center
+  position: relative
+  +flex
+  +ai-end
+  +border-radius(7px)
+  text-decoration: none
+  @media (max-width: 767px)
+    height: 280px
+  &:focus
+    text-decoration: none
+  &:hover
+    text-decoration: none
+    .category_item_content
+      border-image: url(../img/bgs/c_bg_hover.svg) 0 fill stretch
+  .category_item_content
+    width: 100%
+    height: 147px
+    +flex
+    +ai-center
+    border-image: url(../img/bgs/c_bg.svg) 0 fill stretch
+    position: relative
+    padding: 30px
+    @media (max-width: 767px)
+      padding: 15px 15px 30px
+      height: 120px
+      +ai-end
+    picture
+      +flex
+      +ai-center
+      +j-center
+      width: 60px
+      height: 60px
+      background: $blue
+      +border-radius(50%)
+      position: absolute
+      top: -30px
+      left: 30px
+      @media (max-width: 767px)
+        left: 15px
+    .category_item_name
+      color: #fff
+      font: 22px/$f+rem / 31px $Montserrat-bold
+      @media (max-width: 1200px)
+        font-size: 20px/$f+rem
+        line-height: 1.2
+      @media (max-width: 991px)
+        font-size: 18px/$f+rem
+
+
+
+
+.page_section
+  padding: 40px 0 50px
+  @media (max-width: 1200px)
+    padding: 30px 0 40px
+  @media (max-width: 767px)
+    padding: 20px 0 30px
+.subcategory_list
+  +flex
+  +ai-center
+  +wrap
+  margin: 0 -10px
+  li
+    padding: 10px
+    @media (max-width: 1200px)
+      padding: 5px
+    &.active
+      a
+        background: $blue
+        color: #fff
+    &.d_none
+      display: none
+    &.last
+      padding: 10px 40px
+    a
+      color: #7A89A6
+      font: 16px/$f+rem $Montserrat-SemiBold
+      background: #fff
+      +border-radius(3px)
+
+      &:hover
+        background: $blue
+        color: #fff
+  .show_more
+    display: inline-block
+    color: #7A89A6
+    font: 16px/$f+rem $Montserrat-SemiBold
+    border-bottom: 1px dashed #7A89A6
+    cursor: pointer
+
+
+.popular_teachers
+  .col
+    width: 33.33%
+    margin-bottom: 20px
+    @media (max-width: 1200px)
+      width: 50%
+    @media (max-width: 767px)
+      width: 100%
+
+.popular_teachers_item
+  background: #fff
+  box-shadow: 0 22px 145px rgba(165, 170, 215, 0.07), 0 2.75474px 18.1562px rgba(165, 170, 215, 0.035)
+  +border-radius(7px)
+  padding: 15px
+  +flex
+  +wrap
+  @media (max-width: 767px)
+    padding: 10px
+  .photo
+    +flex
+    background-size: cover
+    background-position: center
+    width: 110px
+    height: 110px
+    min-width: 110px
+    +border-radius(7px)
+    margin-right: 20px
+    @media (max-width: 1200px)
+      width: 80px
+      height: 80px
+      min-width: 80px
+    @media (max-width: 575px)
+      margin-right: 10px
+  .popular_teachers_item_info
+    width: calc(100% - 130px)
+    padding-top: 6px
+    @media (max-width: 1200px)
+      width: calc(100% - 100px)
+      padding-top: 0
+    @media (max-width: 575px)
+      width: calc(100% - 90px)
+    > strong
+      font-size: 20px/$f+rem
+      display: block
+      margin-bottom: 12px
+      @media (max-width: 1200px)
+        font-size: 18px/$f+rem
+        line-height: 1.2
+      @media (max-width: 767px)
+        font-size: 16px/$f+rem
+    .rating
+      margin-bottom: 10px
+    .cours_amount
+      display: inline-block
+      position: relative
+      padding-left: 30px
+      font-size: 14px
+      &:before
+        +b_a
+        left: 0
+        top: 6px
+        margin: auto
+        width: 20px
+        height: 16px
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='20' height='16' viewBox='0 0 20 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M9.58635 4.86203L9.58627 4.86202C9.20369 4.81332 8.85863 5.0912 8.81151 5.47762C8.76445 5.86353 9.03148 6.21944 9.41363 6.2684L13.8146 6.83235L9.50001 8.74894L2.33285 5.5652L9.50001 2.38149L16.6672 5.56523L16.3105 5.72366L9.58635 4.86203ZM4.84965 11.3479V8.22885L9.2233 10.1717C9.39948 10.2499 9.59988 10.2502 9.7767 10.1717L9.77671 10.1717L14.1504 8.22885V11.3479C14.1504 11.8671 13.7305 12.4313 12.941 12.8809C12.0065 13.4131 10.7576 13.6831 9.50206 13.6835C8.24656 13.6838 6.99628 13.4147 6.05899 12.8809L6.0095 12.9678L6.05898 12.8809C5.26951 12.4313 4.84965 11.8671 4.84965 11.3479ZM18.6836 4.91533L9.77671 0.9588C9.60023 0.8804 9.39979 0.8804 9.2233 0.958801L0.31639 4.91533C-0.238714 5.16191 -0.238883 5.96851 0.316399 6.21511L3.46206 7.61242V11.3478C3.46206 12.4185 4.14404 13.3591 5.23001 14.0271C6.31688 14.6956 7.8203 15.1 9.50001 15.1C11.1797 15.1 12.6831 14.6956 13.77 14.0271C14.856 13.3591 15.5379 12.4185 15.5379 11.3478V7.61242L15.9317 7.4375V13.7826C15.9317 14.1716 16.2401 14.4913 16.6255 14.4913C17.011 14.4913 17.3193 14.1716 17.3193 13.7826V6.82115L18.6836 6.21514C19.2387 5.96856 19.2388 5.16196 18.6836 4.91533Z' fill='%23168EC4' stroke='%23168EC4' stroke-width='0.2'/%3e%3c/svg%3e ")
+
+
+
+section.border
+  border-top: 1px solid rgba(22, 142, 196, 0.3)
+  border-bottom: 1px solid rgba(22, 142, 196, 0.3)
+
+
+.filter_box
+  .filter_title
+    position: relative
+    display: inline-block
+    padding-left: 30px
+    font: 28px/$f+rem $Montserrat-bold
+    margin-bottom: 30px
+    &:before
+      +b_a
+      left: 0
+      top: 0
+      bottom: 0
+      margin: auto
+      width: 23px
+      height: 23px
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='23' height='23' viewBox='0 0 23 23' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M8.65799 22L13.6731 19.6395V13.4533L21.5373 5.47779C21.8337 5.17895 22 4.7688 22 4.33928V2.59342C22 1.71262 21.3088 1 20.456 1H2.54401C1.69117 1 1 1.71262 1 2.59342V4.37921C1 4.78453 1.14877 5.17411 1.41705 5.46932L8.65799 13.4533V22Z' stroke='%23F47920' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ")
+
+.filter_group
+  margin-bottom: 30px
+  .filter_group_title
+    font-family: $Montserrat-SemiBold
+    color: #252525
+    margin-bottom: 5px
+  ul
+    li
+      margin-bottom: 5px
+
+.custom_checkbox
+  position: relative
+  +flex
+  +ai-center
+  input
+    position: absolute
+    opacity: 0
+    &:checked
+      + label
+        &:before
+          border: 1px solid $orange
+          background: $orange
+        &:after
+          opacity: 1
+
+    + label
+      padding-left: 33px
+      position: relative
+      display: inline-block
+      font-size: 14px/$f+rem
+      cursor: pointer
+
+      &:before
+        +b_a
+        border: 1px solid #A09FAA
+        width: 20px
+        height: 20px
+        +border-radius(2px)
+        left: 0
+        top: 5px
+        //background: $orange
+
+
+      &:after
+        +b_a
+        left: 2px
+        top: 9px
+        width: 16px
+        height: 12px
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='16' height='12' viewBox='0 0 16 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M15.7657 0.239312C15.4533 -0.0797705 14.9468 -0.0797705 14.6343 0.239312L5.04982 10.0277L1.3657 6.26526C1.0533 5.94618 0.546796 5.94621 0.234328 6.26526C-0.0781093 6.58431 -0.0781093 7.10159 0.234328 7.42067L4.48414 11.7608C4.79645 12.0798 5.30332 12.0796 5.61551 11.7608L15.7657 1.39475C16.0781 1.0757 16.0781 0.558394 15.7657 0.239312Z' fill='white'/%3e%3c/svg%3e ")
+        opacity: 0
+
 
 
 
