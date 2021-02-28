@@ -293,6 +293,11 @@ h1, .h1
     font-size: 30px / $f+rem
   @media (max-width: 575px)
     font-size: 26px / $f+rem
+  &.page_title
+    font-family: $Montserrat-SemiBold
+    @media (min-width: 1201px)
+      margin-top: 0
+      font-size: 40px/$f+rem
 
 h2, .h2
   font-size: 42px / $f+rem
@@ -1550,6 +1555,18 @@ footer
     padding: 40px 0
   @media (max-width: 767px)
     padding: 30px 0
+  &.b_bottom
+    border-bottom: 1px solid rgba(22,142,196,.3)
+    @media (min-width: 1201px)
+      padding: 50px 0
+  .text_left
+    text-align: left
+    h2, .h2, h1, .h1
+      margin-bottom: 15px
+      max-width: 100%
+      @media (min-width: 1201px)
+        font-size: 40px
+
   h1, .h1
     max-width: 1090px
     margin: auto
@@ -1853,6 +1870,12 @@ section.border
 
 .sidebar
   width: 21%
+  &.w_25
+    @media (min-width: 1101px)
+      width: 25%
+      + .main_content
+        width: 75%
+        padding-left: 30px
   @media (max-width: 1100px)
     width: 100%
 .main_content
@@ -2116,4 +2139,101 @@ body
 .page_content
   @media (min-width: 1201px)
     padding-top: 65px
+
+.pt_0
+  padding-top: 0
+.pb_30
+  @media (min-width: 1201px)
+    padding-bottom: 30px
+
+
+.title_404
+  position: relative
+  color: #262626
+  font-size: 287px/$f+rem
+  font-family: $Montserrat-bold
+  line-height: 1
+  display: inline-block
+  padding-bottom: 18px
+  margin-bottom: 25px
+  @media (max-width: 1200px)
+    font-size: 200px/$f+rem
+  @media (max-width: 767px)
+    font-size: 150px/$f+rem
+  @media (max-width: 575px)
+    font-size: 90px/$f+rem
+  &:before
+    +b_a
+    bottom: 0
+    left: 0
+    right: 0
+    margin: auto
+    height: 47px
+    border-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='626' height='47' viewBox='0 0 626 47' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M1.30108 41.1035C1.30108 41.1035 394.914 -11.0922 624.869 10.2868' stroke='%23F47920' stroke-width='10'/%3e%3c/svg%3e ") 0 fill stretch
+    @media (max-width: 1200px)
+      height: 30px
+    @media (max-width: 767px)
+      height: 26px
+    @media (max-width: 575px)
+      height: 20px
+
+  img
+    position: absolute
+    top: 25px
+    right: 0
+    left: 0
+    margin: auto
+    @media (max-width: 1200px)
+      max-width: 155px
+    @media (max-width: 767px)
+      top: 15px
+      max-width: 115px
+    @media (max-width: 575px)
+      top: 0
+      max-width: 84px
+
+.text_404
+  max-width: 665px
+  margin: auto
+  a
+    color: $orange
+
+
+.content_404
+  @media (min-width: 768px)
+    padding-bottom: 45px
+
+
+
+.sidebar_menu
+  background: #FFFFFF
+  box-shadow: 0 22px 145px rgba(157, 160, 184, 0.1), 0 2.75474px 18.1562px rgba(151, 156, 193, 0.07)
+  +border-radius(20px)
+  li
+    position: relative
+    padding: 18px 40px
+    &:before
+      +b_a
+      right: 0
+      top: 0
+      bottom: 0
+      width: 3px
+      height: 100%
+      background: $blue
+      opacity: 0
+    &.active
+      &:before
+        opacity: 1
+      a
+        color: $blue
+        font-family: $Montserrat-bold
+    a
+      color: #333
+      font-size: 20px/$f+rem
+      display: inline-block
+      &:hover
+        text-decoration: none
+        color: $blue
+
+
 
