@@ -100,6 +100,14 @@ $(document).ready(function(){
 
 
 
+    $('.materials_group_header').click(function(){
+       $(this).parent().toggleClass('act');
+        return false;
+    });
+
+
+
+
 
 });
 
