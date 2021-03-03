@@ -130,6 +130,20 @@ $(document).ready(function(){
 
 
 
+    function limitChars(myObject, max, typeChars, leftChars){
+        $(myObject).keydown(function(){
+            var count = $(this).val().length;
+            var num = max - count;
+            $(typeChars).text(count);
+        });
+    }
+
+    var myObject = '.limitInput';
+    var max = 1000;
+    var typeChars = '#typeChars';
+    limitChars(myObject, max, typeChars);
+    limitChars('#limitInput', 1000, typeChars);
+
 });
 
 

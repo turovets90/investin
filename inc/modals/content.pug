@@ -30,8 +30,14 @@ section
                         label(title="bad" for="star-0")
                     .clear
                 .field
+                    .review_textarea
 
-                    textarea.form_control(placeholder="Опишите ваши впечатления здесь")
+                        textarea.form_control(placeholder="Опишите ваши впечатления здесь" id="limitInput")
+                        .symbols_counter
+                            #typeChars 0
+                            span /
+                            #leftChars  1000
+
                 .field.btn_box
                     button.btn.btn_light Не хочу
                     button.btn.btn_blue(type="submit") Оставить отзыв

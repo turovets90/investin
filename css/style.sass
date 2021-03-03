@@ -574,12 +574,18 @@ header
       -webkit-appearance: none
       width: 0
     &::-webkit-scrollbar:vertical
-      width: 3px
-      background: #c6c8ca
-      border-radius: 3px
+      width: 8px
+      background: rgba(196, 196, 196, 0.21)
+      +border-radius(10px)
+      @media (max-width: 1200px)
+        width: 3px
+        +border-radius(3px)
     &::-webkit-scrollbar-thumb
-      border-radius: 3px
-      background-color: $blue
+      +border-radius(10px)
+      background-color: $orange
+      @media (max-width: 1200px)
+        width: 3px
+        +border-radius(3px)
 
   li
 
@@ -3704,17 +3710,25 @@ textarea
 
 .fancybox-slide--html
   .fancybox-close-small
-    width: 25px
-    height: 25px
-    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='25' height='26' viewBox='0 0 25 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M14.7904 13.4303L24.5249 3.69553C25.1584 3.06232 25.1584 2.03851 24.5249 1.4053C23.8917 0.772095 22.8679 0.772095 22.2347 1.4053L12.4999 11.1401L2.76536 1.4053C2.13185 0.772095 1.10834 0.772095 0.475129 1.4053C-0.158376 2.03851 -0.158376 3.06232 0.475129 3.69553L10.2096 13.4303L0.475129 23.1651C-0.158376 23.7983 -0.158376 24.8221 0.475129 25.4554C0.790696 25.7712 1.20562 25.9299 1.62024 25.9299C2.03487 25.9299 2.4495 25.7712 2.76536 25.4554L12.4999 15.7206L22.2347 25.4554C22.5506 25.7712 22.9652 25.9299 23.3798 25.9299C23.7944 25.9299 24.2091 25.7712 24.5249 25.4554C25.1584 24.8221 25.1584 23.7983 24.5249 23.1651L14.7904 13.4303Z' fill='black' fill-opacity='0.3'/%3e%3c/svg%3e ")
-    padding: 0
-    top: 30px
-    right: 30px
-    @media (max-width: 1200px)
-      top: 20px
-      right: 20px
-    svg
-      display: none
+    @media (max-width: 767px)
+      right: 5px
+      top: 5px
+      padding: 5px
+      svg
+        *
+          fill: #DFDEE2
+    @media (min-width: 1101px)
+      width: 25px
+      height: 25px
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='25' height='26' viewBox='0 0 25 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M14.7904 13.4303L24.5249 3.69553C25.1584 3.06232 25.1584 2.03851 24.5249 1.4053C23.8917 0.772095 22.8679 0.772095 22.2347 1.4053L12.4999 11.1401L2.76536 1.4053C2.13185 0.772095 1.10834 0.772095 0.475129 1.4053C-0.158376 2.03851 -0.158376 3.06232 0.475129 3.69553L10.2096 13.4303L0.475129 23.1651C-0.158376 23.7983 -0.158376 24.8221 0.475129 25.4554C0.790696 25.7712 1.20562 25.9299 1.62024 25.9299C2.03487 25.9299 2.4495 25.7712 2.76536 25.4554L12.4999 15.7206L22.2347 25.4554C22.5506 25.7712 22.9652 25.9299 23.3798 25.9299C23.7944 25.9299 24.2091 25.7712 24.5249 25.4554C25.1584 24.8221 25.1584 23.7983 24.5249 23.1651L14.7904 13.4303Z' fill='black' fill-opacity='0.3'/%3e%3c/svg%3e ")
+      padding: 0
+      top: 30px
+      right: 30px
+      @media (max-width: 1200px)
+        top: 20px
+        right: 20px
+      svg
+        display: none
 
 
 .modal_window
@@ -3724,6 +3738,8 @@ textarea
     font-family: $Montserrat-SemiBold
     text-align: center
     margin: 40px 0
+    @media (max-width: 1200px)
+      line-height: 1.2
 
 
   .modal_author
@@ -3843,8 +3859,9 @@ textarea
       margin-bottom: 10px
 
     textarea
-      height: 235px
+      height: 220px
       font-family: $Montserrat-light
+      border: 0
       @media (max-width: 1200px)
         font-size: 16px/$f+rem
       @media (max-width: 575px)
@@ -3896,3 +3913,42 @@ textarea
     .btn
       &:last-child
         margin-left: 20px
+
+.review_textarea
+  display: inline-block
+  width: 100%
+  position: relative
+  +border-radius(5px)
+  border: 1px solid #DFDEE2
+  padding: 10px
+
+  textarea
+    padding-bottom: 40px
+    height: 220px
+    overflow: auto
+    &::-webkit-scrollbar
+      -webkit-appearance: none
+      width: 0
+    &::-webkit-scrollbar:vertical
+      width: 8px
+      background: rgba(196, 196, 196, 0.21)
+      +border-radius(10px)
+      @media (max-width: 1200px)
+        width: 3px
+        +border-radius(3px)
+    &::-webkit-scrollbar-thumb
+      +border-radius(10px)
+      background-color: $orange
+      @media (max-width: 1200px)
+        width: 3px
+        +border-radius(3px)
+
+
+  .symbols_counter
+    position: absolute
+    right: 40px
+    bottom: 20px
+    +flex
+    +ai-center
+    color: #8D8D8D
+    font: 16px/$f+rem $Montserrat-Medium

@@ -106,7 +106,13 @@
                 <div class="clear"></div>
               </div>
               <div class="field">
-                <textarea class="form_control" placeholder="Опишите ваши впечатления здесь"></textarea>
+                <div class="review_textarea">
+                  <textarea class="form_control" placeholder="Опишите ваши впечатления здесь" id="limitInput"></textarea>
+                  <div class="symbols_counter">
+                    <div id="typeChars">0</div><span>/</span>
+                    <div id="leftChars"> 1000</div>
+                  </div>
+                </div>
               </div>
               <div class="field btn_box">
                 <button class="btn btn_light">Не хочу</button>
