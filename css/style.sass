@@ -443,6 +443,7 @@ header
       width: 100%
       order: 1
       -webkit-order: 1
+      +j-center
     @media (max-width: 1100px)
       padding-top: 10px
     @media (max-width: 575px)
@@ -844,7 +845,7 @@ header
   @media (max-width: 575px)
     display: none
     position: absolute
-    top: calc(100% + 25px)
+    top: calc(100% + 20px)
     right: 0
     z-index: 2
     padding: 0 !important
@@ -887,6 +888,7 @@ header
       border: 0
       background: none
       padding: 0
+      display: none
       &:before, &:after
         +b_a
         width: 100%
@@ -1117,7 +1119,7 @@ section
 
 
 .card_item
-  +box-shadow(0px 22px 145px rgba(165, 170, 215, 0.07))
+  box-shadow: 0 22px 145px rgba(165, 170, 215, 0.07), 0 2.75474px 18.1562px rgba(165, 170, 215, 0.035)
   background: #fff
   +border-radius(10px)
   overflow: hidden
@@ -1302,6 +1304,9 @@ section
           height: 8px
           +border-radius(50%)
           opacity: 0.1
+          &:hover
+            background: #1691c9
+            opacity: 0.4
           &:before
             display: none
     .slick-prev
@@ -2160,12 +2165,16 @@ body
           width: 30px
           height: 30px
           font-size: 16px/$f+rem
+        &:hover
+          background: rgba(22, 142, 196, 0.1)
         &.active
           background: $blue
           color: #fff
           font-family: $Montserrat-bold
         &.page_prev, &.page_next
           width: 28px
+          &:hover
+            background: none
           @media (max-width: 767px)
             width: 25px
           &:before
@@ -3401,7 +3410,7 @@ textarea
       +flex
       width: 45px
       height: 45px
-      background: $blue
+      background: #F6F8FC
       position: relative
       +border-radius(50%)
       @media (max-width: 767px)
@@ -3414,23 +3423,24 @@ textarea
         height: 20px
 
       &.lesson_prev
-        &.disabled
-          background: #F6F8FC
+
+        &:hover
+          background: $blue
           &:before
-            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='12' height='20' viewBox='0 0 12 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M9.94922 18.1021L1.6395 9.79233L9.94922 1.48261' stroke='%237A89A6' stroke-width='2.13679' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ")
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='12' height='20' viewBox='0 0 12 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M9.94922 18.1021L1.6395 9.79233L9.94922 1.48261' stroke='%23fff' stroke-width='2.13679' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ")
         &:before
-          background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='12' height='20' viewBox='0 0 12 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M9.94922 18.1021L1.6395 9.79233L9.94922 1.48261' stroke='%23fff' stroke-width='2.13679' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ")
+          background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='12' height='20' viewBox='0 0 12 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M9.94922 18.1021L1.6395 9.79233L9.94922 1.48261' stroke='%237A89A6' stroke-width='2.13679' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ")
 
       &.lesson_next
         margin-left: 20px
         @media (max-width: 767px)
           margin-left: 10px
-        &.disabled
-          background: #F6F8FC
+        &:hover
+          background: $blue
           &:before
-            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='12' height='20' viewBox='0 0 12 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M1.64844 1.48267L9.95816 9.79239L1.64844 18.1021' stroke='%237A89A6' stroke-width='2.13679' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ")
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='12' height='20' viewBox='0 0 12 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M1.64844 1.48267L9.95816 9.79239L1.64844 18.1021' stroke='white' stroke-width='2.13679' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ")
         &:before
-          background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='12' height='20' viewBox='0 0 12 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M1.64844 1.48267L9.95816 9.79239L1.64844 18.1021' stroke='white' stroke-width='2.13679' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ")
+          background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='12' height='20' viewBox='0 0 12 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M1.64844 1.48267L9.95816 9.79239L1.64844 18.1021' stroke='%237A89A6' stroke-width='2.13679' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ")
 
 
 
@@ -3853,6 +3863,8 @@ textarea
 .modal_form
   .field
     margin-bottom: 30px
+    &:last-child
+      margin-bottom: 0
     > label
       display: block
       color: #8D8D8D
@@ -3952,3 +3964,73 @@ textarea
     +ai-center
     color: #8D8D8D
     font: 16px/$f+rem $Montserrat-Medium
+
+
+.timer_box
+  background: #2F3C4C
+  color: #fff
+  padding: 15px 40px
+  position: relative
+  @media (max-width: 1200px)
+    padding: 5px 20px
+  .hide
+    position: absolute
+    right: 20px
+    top: 0
+    bottom: 0
+    margin: auto
+    width: 20px
+    height: 20px
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M11.8323 9.99994L19.6199 2.21211C20.1267 1.70554 20.1267 0.886491 19.6199 0.379925C19.1134 -0.126642 18.2943 -0.126642 17.7877 0.379925L9.9999 8.16776L2.21229 0.379925C1.70548 -0.126642 0.88667 -0.126642 0.380103 0.379925C-0.126701 0.886491 -0.126701 1.70554 0.380103 2.21211L8.16771 9.99994L0.380103 17.7878C-0.126701 18.2943 -0.126701 19.1134 0.380103 19.62C0.632556 19.8726 0.964494 19.9996 1.29619 19.9996C1.6279 19.9996 1.9596 19.8726 2.21229 19.62L9.9999 11.8321L17.7877 19.62C18.0404 19.8726 18.3721 19.9996 18.7038 19.9996C19.0355 19.9996 19.3672 19.8726 19.6199 19.62C20.1267 19.1134 20.1267 18.2943 19.6199 17.7878L11.8323 9.99994Z' fill='white'/%3e%3c/svg%3e ")
+    @media (max-width: 575px)
+      width: 10px
+      height: 10px
+      background-size: cover
+      right: 10px
+  .row
+    margin: 0
+  .col
+    width: 50%
+    +flex
+    +ai-center
+    +wrap
+    @media (max-width: 1200px)
+      width: 100%
+      margin-bottom: 10px
+    .timer-element, canvas
+      font-family: $Montserrat-Regular !important
+  .col_left
+    @media (max-width: 1200px)
+      +j-center
+    span
+      @media (max-width: 1400px)
+        font-size: 16px/$f+rem
+      @media (max-width: 1200px)
+        font-size: 14px/$f+rem
+      @media (max-width: 767px)
+        font-size: 12px/$f+rem
+      +flex
+      &:first-child
+        margin-right: 45px
+        @media (max-width: 1400px)
+          margin-right: 25px
+  .col_right
+    +flex
+    +j-end
+    @media (max-width: 1200px)
+      +j-center
+    span
+      font-size: 24px/$f+rem
+      font-family: $Montserrat-bold
+      @media (max-width: 1400px)
+        font-size: 20px/$f+rem
+      @media (max-width: 1200px)
+        font-size: 16px/$f+rem
+
+    .timer
+      margin-left: 30px
+      @media (max-width: 575px)
+        margin-left: 0
+        width: 100%
+
+

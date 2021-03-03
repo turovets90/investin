@@ -1,23 +1,6 @@
 $(document).ready(function(){
 
-    /* перевод картинки svg в код */
-    $('.icon img, img.icon').each(function(){
-        var $img = $(this);
-        var imgClass = $img.attr('class');
-        var imgURL = $img.attr('src');
-        $.get(imgURL, function(data) {
-            var $svg = $(data).find('svg');
-            if(typeof imgClass !== 'undefined') {
-                $svg = $svg.attr('class', imgClass+' replaced-svg');
-            }
-            $svg = $svg.removeAttr('xmlns:a');
-            if(!$svg.attr('viewBox') && $svg.attr('height') && $svg.attr('width')) {
-                $svg.attr('viewBox', '0 0 ' + $svg.attr('height') + ' ' + $svg.attr('width'))
-            }
-            $img.replaceWith($svg);
-        }, 'xml');
-    });
-    /* end перевод картинки svg в код */
+
 
 
     $('.h_search_toggler').click(function () {
@@ -128,6 +111,17 @@ $(document).ready(function(){
 
 
 
+    $('.h_form .btn_reset').click(function(){
+        $(this).hide();
+    });
+    $('.search_input').keydown(function(){
+        if ( $(this).val().length>1 ) {
+        $(this).next().show();
+        }else{
+            $(this).next().hide();
+        }
+    });
+
 
 
     function limitChars(myObject, max, typeChars, leftChars){
@@ -143,6 +137,26 @@ $(document).ready(function(){
     var typeChars = '#typeChars';
     limitChars(myObject, max, typeChars);
     limitChars('#limitInput', 1000, typeChars);
+
+
+    $(function () {
+        $('input, textarea').each(function () {
+            $(this).blur(function(){
+                if(!this.value){
+                    $(this).removeClass('error');
+                }
+                else{
+                    $(this).addClass('error');
+                }
+            });
+            if ( !this.value ) {
+                $(this).removeClass('error');
+            }
+            else{
+                $(this).addClass('error');
+            }
+        });
+    });
 
 });
 
