@@ -197,18 +197,15 @@ section.course_page_content
                 .course_sidebar
                     .course_sidebar_header
                         .img(style="background-image:url(img/examples/Rectangle33.png)")
-                        .discount %
+
                     .course_sidebar_body
                         .price_box
-                            .regular_price
-                                strong 220
-                                span бел. <br>руб.
-                            .old_price_box
-                                .old_price 470 бел. руб.
-                            .price_in_usd Цена в USD: <strong>$100</strong>
-                        p.guarantee Гарантия возврата денег — 30 дней
-                        a.btn.btn_blue(href="#") Купить
-                        a.btn.has_border.add_wish(href="#") <i></i>В избранное
+                            .free Бесплатно
+                            p.text_center Для прохождения, пожалуйста, зарегистрируйтесь
+                        .btn_group
+                            a.btn.btn_blue(href="#") Начать
+                            a.btn.add_wish(href="#")
+                            a.btn.reload(href="#")
                         -var inc=['','3 часа видео','Дополнительные материалы','Пожизненный доступ','Задания и тестирования','Общение с автором курса','Сертификат об окончании'];
                         p.title Курс включает:
                         ul.course_includes

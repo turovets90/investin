@@ -62,7 +62,7 @@ section.course_page_content
                     li
                         a(href="#") IT терминология
 
-                .h3.mt Материалы курса
+                .h3.mt Материалы курса <span class="stage during">В процессе</span>
                 -var materials=['','Present Simple Настоящее Простое','Present Simple вопросы и отрицания','This That These Those указательные местоимения','Еще немного о Present Simple','Предлоги и Союзы'];
                 .materials
                     .materials_group.act
@@ -70,6 +70,7 @@ section.course_page_content
                             .d_flex
                                 .materials_group_title
                                     span Введение
+                                .stage.during В процессе
                             .count 25 занятий
                         .materials_group_body
                             ul.materials_list
@@ -88,14 +89,18 @@ section.course_page_content
                                                     if m===3
                                                         img(src="img/icons/free.svg")
                                             if m===3
-                                                a.watch(href="#")
-                                                    span Смотреть
+                                                .stage.during В процессе
+                                            else if m === 1
+                                                .stage.passed Пройден
+                                            else if m===5
+                                                .stage.not_passed Не пройден
                                         .time 02:35
                     .materials_group
                         .materials_group_header
                             .d_flex
                                 .materials_group_title
                                     span Произношение
+                                .stage.not_passed Не пройден
                             .count 16 занятий
                         .materials_group_body
                             ul.materials_list
@@ -111,8 +116,14 @@ section.course_page_content
                                                     else
                                                         img(src="img/icons/approval.svg")
                                                 span=materials[m]
+                                                    if m === 3
+                                                        img(src="img/icons/free.svg")
                                             if m === 3
-                                                a.watch(href="#") Смотреть
+                                                .stage.during В процессе
+                                            else if m === 1
+                                                .stage.passed Пройден
+                                            else if m === 5
+                                                .stage.not_passed Не пройден
                                         .time 02:35
 
 
@@ -196,19 +207,19 @@ section.course_page_content
             .col.course_page_sidebar
                 .course_sidebar
                     .course_sidebar_header
-                        .img(style="background-image:url(img/examples/Rectangle33.png)")
-                        .discount %
+                        video(class="video-js" controls preload="none"  poster="http://vjs.zencdn.net/v/oceans.png" data-setup="{}")
+                            source(src="http://vjs.zencdn.net/v/oceans.mp4" type="video/mp4")
+                            source(src="http://vjs.zencdn.net/v/oceans.webm" type="video/webm")
+                            source(src="http://vjs.zencdn.net/v/oceans.ogv" type="video/ogg")
+
                     .course_sidebar_body
                         .price_box
-                            .regular_price
-                                strong 220
-                                span бел. <br>руб.
-                            .old_price_box
-                                .old_price 470 бел. руб.
-                            .price_in_usd Цена в USD: <strong>$100</strong>
-                        p.guarantee Гарантия возврата денег — 30 дней
-                        a.btn.btn_blue(href="#") Купить
-                        a.btn.has_border.add_wish(href="#") <i></i>В избранное
+                            .free Бесплатно
+                            p.text_center Для прохождения, пожалуйста, зарегистрируйтесь
+                        .btn_group
+                            a.btn.btn_blue(href="#") Начать
+                            a.btn.add_wish(href="#")
+                            a.btn.reload(href="#")
                         -var inc=['','3 часа видео','Дополнительные материалы','Пожизненный доступ','Задания и тестирования','Общение с автором курса','Сертификат об окончании'];
                         p.title Курс включает:
                         ul.course_includes

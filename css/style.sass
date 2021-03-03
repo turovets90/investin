@@ -1,4 +1,5 @@
 //@import "bootstrap"
+@import "video"
 @import "slick-less"
 @import "fancybox"
 @import "select2"
@@ -603,7 +604,7 @@ header
   display: inline-block
   border: 0
   text-decoration: none
-  padding: 22px 23px
+  padding: 20px 23px
   position: relative
   @media (max-width: 1300px)
     font-size: 16px / $f+rem
@@ -630,8 +631,18 @@ header
   &.btn_orange
     color: #fff
     background: $orange
+    border: 2px solid $orange
     &:hover
+      border: 2px solid $orange_hover
       background: $orange_hover
+  &.btn_light
+    border: 2px solid #F6F8FC
+    background: #F6F8FC
+    color: #7A89A6
+    &:hover
+      border: 2px solid #EAEEF4
+      background: #EAEEF4
+      color: #617293
   &.btn_dark
     color: #fff
     background: $dark
@@ -2611,11 +2622,39 @@ body
   max-width: 430px
   padding: 5px
   display: inline-block
+  text-align: left
 
   .course_sidebar_header
 
     position: relative
-    .img
+    .video-js
+      .vjs-big-play-button
+        background: rgba(22, 142, 196, 0.4)
+        width: 77px
+        height: 77px
+        +border-radius(50%)
+        +m_a
+        border: 0
+        .vjs-icon-placeholder
+          position: absolute
+          +m_a
+          background: #168EC4
+          width: 58px
+          height: 58px
+          +border-radius(50%)
+          &:before
+            +b_a
+            left: 10px
+            top: 0
+            bottom: 0
+            right: 0
+            margin: auto
+            width: 0
+            height: 0
+            border-left: 19px solid #fff
+            border-top: 11px solid transparent
+            border-bottom: 11px solid transparent
+    .img, video, .video-js
       height: 235px
       width: 100%
       background-size: cover
@@ -2648,11 +2687,48 @@ body
       padding: 20px
     @media (max-width: 767px)
       padding: 15px
+    .btn_group
+      +flex
+      +ai-center
+      .btn
+        + .btn
+          margin-left: 10px
+      .add_wish, .reload
+        border: 2px solid $blue
+        max-width: 60px
+        height: 50px
+        position: relative
+        @media (max-width: 575px)
+          max-width: 50px
+        &:before
+          +b_a
+          +m_a
+      .add_wish
+        &:before
+          width: 27px
+          height: 25px
+          background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='27' height='25' viewBox='0 0 27 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M14.3926 1.64845L17.2876 7.4722C17.4326 7.76595 17.7126 7.97095 18.0376 8.01845L24.5189 8.9547C24.7814 8.9897 25.0176 9.1272 25.1789 9.3372C25.4814 9.73095 25.4351 10.2884 25.0726 10.6272L20.3751 15.1697C20.1364 15.3947 20.0301 15.7247 20.0926 16.0459L21.2176 22.4559C21.2964 22.9872 20.9339 23.4847 20.4026 23.5709C20.1826 23.6047 19.9576 23.5697 19.7576 23.4709L13.9851 20.4447C13.6951 20.2872 13.3476 20.2872 13.0576 20.4447L7.24266 23.4872C6.75641 23.7347 6.16141 23.5509 5.89641 23.0747C5.79516 22.8822 5.76016 22.6634 5.79516 22.4497L6.92016 16.0397C6.97641 15.7197 6.87016 15.3909 6.63766 15.1647L1.91516 10.6234C1.53016 10.2409 1.52766 9.61845 1.91141 9.23345C1.91266 9.2322 1.91391 9.2297 1.91516 9.22845C2.07391 9.0847 2.26891 8.98845 2.48016 8.95095L8.96266 8.0147C9.28641 7.96345 9.56516 7.76095 9.71266 7.4672L12.6051 1.64845C12.7214 1.4122 12.9276 1.23095 13.1776 1.14845C13.4289 1.0647 13.7039 1.0847 13.9401 1.20345C14.1339 1.2997 14.2926 1.45595 14.3926 1.64845Z' stroke='%23168EC4' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ")
+      .reload
+        &:before
+          width: 23px
+          height: 23px
+          background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='23' height='23' viewBox='0 0 23 23' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M21.5835 10.1826H21.5824C21.4296 10.1827 21.2783 10.2129 21.1372 10.2715C20.996 10.3301 20.8678 10.416 20.7599 10.5241C20.6519 10.6323 20.5663 10.7606 20.5079 10.9019C20.4496 11.0431 20.4196 11.1945 20.4197 11.3473C20.4183 12.9787 19.9696 14.5786 19.1226 15.9729C18.2756 17.3672 17.0626 18.5027 15.6154 19.2559C14.1682 20.0091 12.5423 20.3512 10.9143 20.245C9.28629 20.1389 7.71855 19.5885 6.38146 18.6537C2.3522 15.8323 1.36942 10.2589 4.19078 6.22955C7.01213 2.20025 12.5857 1.21737 16.6149 4.03882C17.2245 4.46454 17.7785 4.96475 18.264 5.52785H14.9892C14.6806 5.52785 14.3846 5.65045 14.1664 5.86869C13.9482 6.08692 13.8256 6.38291 13.8256 6.69154C13.8256 7.00017 13.9482 7.29615 14.1664 7.51439C14.3846 7.73262 14.6806 7.85522 14.9892 7.85522H20.4198C20.7284 7.85522 21.0244 7.73262 21.2426 7.51439C21.4609 7.29615 21.5835 7.00017 21.5835 6.69154V1.26101C21.5835 0.952377 21.4609 0.656389 21.2426 0.438156C21.0244 0.219923 20.7284 0.0973206 20.4198 0.0973206C20.1111 0.0973206 19.8152 0.219923 19.5969 0.438156C19.3787 0.656389 19.2561 0.952377 19.2561 1.26101V3.19888C18.8477 2.81142 18.4111 2.45487 17.9499 2.13217C16.7399 1.28493 15.3748 0.68431 13.9327 0.364607C12.4906 0.0449038 10.9996 0.0123775 9.54494 0.268885C8.09025 0.525393 6.70033 1.06591 5.45454 1.85958C4.20874 2.65324 3.13147 3.68452 2.28423 4.89452C0.573144 7.33822 -0.0970991 10.3616 0.420941 13.2994C0.938982 16.2373 2.60287 18.8491 5.04657 20.5601C6.92803 21.8854 9.17301 22.5969 11.4743 22.5973C12.1372 22.597 12.7987 22.5388 13.4514 22.4235C16.0559 21.964 18.4152 20.6018 20.1151 18.5759C21.8151 16.5499 22.7469 13.9899 22.7471 11.3453C22.7469 11.0368 22.6242 10.7411 22.406 10.5231C22.1878 10.3051 21.892 10.1826 21.5835 10.1826Z' fill='%23168EC4'/%3e%3c/svg%3e ")
 
     .price_box
       +flex
       +wrap
       margin-bottom: 15px
+      .free
+        text-align: center
+        display: block
+        width: 100%
+        font-size: 30px/$f+rem
+        font-family: $Montserrat-bold
+        margin-bottom: 10px
+        + p
+          text-align: center
+          font-size: 14px/$f+rem
+          line-height: 24px
       .regular_price
         width: 55%
         +flex
@@ -2807,7 +2883,7 @@ body
   background: #FFFFFF
   box-shadow: 0 22px 145px rgba(157, 160, 184, 0.1), 0 2.75474px 18.1562px rgba(151, 156, 193, 0.07)
   +border-radius(20px)
-  max-width: 910px
+  //max-width: 910px
   padding: 35px 40px
   @media (max-width: 1400px)
     padding: 25px 30px
@@ -2822,8 +2898,9 @@ body
     &.act
       .materials_group_header
         .materials_group_title
-          &:before
-            +transform(rotate(-180deg))
+          span
+            &:before
+              +transform(rotate(-180deg))
       .materials_group_body
         display: block
 
@@ -2832,27 +2909,49 @@ body
       +ai-center
       +j-beetween
       cursor: pointer
+      @media (max-width: 767px)
+        +wrap
+      .d_flex
+        +flex
+        +ai-center
+        width: calc(100% - 120px)
+        @media (max-width: 767px)
+          width: 100%
+          margin-bottom: 10px
+          +wrap
       .materials_group_title
         color: #262626
         font: 20px/$f+rem $Montserrat-bold
         display: inline-block
         position: relative
-        padding-right: 30px
+
+        width: 100%
+        max-width: 475px
+        margin-right: 30px
+        @media (max-width: 767px)
+          //+wrap
+          width: 100%
+          max-width: 100%
+          margin-bottom: 10px
         @media (max-width: 1200px)
           font-size: 18px/$f+rem
         @media (max-width: 767px)
           font-size: 16px/$f+rem
         @media (max-width: 575px)
           font-size: 14px/$f+rem
-        &:before
-          +b_a
-          right: 0
-          top: 0
-          bottom: 0
-          margin: auto
-          width: 17px
-          height: 10px
-          background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='17' height='10' viewBox='0 0 17 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M0.24887 0.458426C0.54107 0.160366 0.99832 0.133265 1.32053 0.377135L1.41284 0.458426L8.00781 7.18593L14.6028 0.458426C14.895 0.160366 15.3522 0.133265 15.6744 0.377135L15.7667 0.458426C16.0589 0.756486 16.0855 1.2229 15.8464 1.55157L15.7667 1.64574L8.58981 8.96663C8.29761 9.26473 7.84031 9.29183 7.51811 9.04792L7.42581 8.96663L0.24887 1.64574C-0.07254 1.31787 -0.07254 0.786286 0.24887 0.458426Z' fill='%23262626'/%3e%3c/svg%3e ")
+        span
+          padding-right: 30px
+          display: inline-block
+          position: relative
+          &:before
+            +b_a
+            right: 0
+            top: 0
+            bottom: 0
+            margin: auto
+            width: 17px
+            height: 10px
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='17' height='10' viewBox='0 0 17 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M0.24887 0.458426C0.54107 0.160366 0.99832 0.133265 1.32053 0.377135L1.41284 0.458426L8.00781 7.18593L14.6028 0.458426C14.895 0.160366 15.3522 0.133265 15.6744 0.377135L15.7667 0.458426C16.0589 0.756486 16.0855 1.2229 15.8464 1.55157L15.7667 1.64574L8.58981 8.96663C8.29761 9.26473 7.84031 9.29183 7.51811 9.04792L7.42581 8.96663L0.24887 1.64574C-0.07254 1.31787 -0.07254 0.786286 0.24887 0.458426Z' fill='%23262626'/%3e%3c/svg%3e ")
       .count
         color: #333333
         font: 18px/$f+rem $Montserrat-bold
@@ -2880,11 +2979,13 @@ body
           .d_flex
             +flex
             +ai-center
-            width: calc(100% - 80px)
+            width: calc(100% - 120px)
+
             @media (max-width: 767px)
-              width: 100%
-              margin-bottom: 10px
-              +wrap
+              width: calc(100% - 55px)
+              //width: 100%
+              //margin-bottom: 10px
+              //+wrap
           .time
             @media (max-width: 767px)
               font-size: 16px/$f+rem
@@ -2931,6 +3032,13 @@ body
   text-decoration: none
   color: $orange
   padding-left: 30px
+  @media (max-width: 767px)
+    width: 30px
+    height: 30px
+    text-indent: -9999px
+    &:before
+      +m_a
+
   span
     border-bottom: 2px solid $orange
     font-family: $Montserrat-bold
@@ -3159,3 +3267,298 @@ body
             img
               width: initial
               max-width: initial
+
+
+.video-js
+  .vjs-big-play-button
+    background: rgba(22, 142, 196, 0.4)
+    width: 120px
+    height: 120px
+    +border-radius(50%)
+    +m_a
+    border: 0
+    .vjs-icon-placeholder
+      position: absolute
+      +m_a
+      background: #168EC4
+      width: 90px
+      height: 90px
+      +border-radius(50%)
+      &:before
+        +b_a
+        left: 10px
+        top: 0
+        bottom: 0
+        right: 0
+        margin: auto
+        width: 0
+        height: 0
+        border-left: 25px solid #fff
+        border-top: 16px solid transparent
+        border-bottom: 16px solid transparent
+
+
+.h3, h3
+  +flex
+  +wrap
+  .stage
+    margin-left: 40px
+    @media (max-width: 1200px)
+      margin-left: 30px
+    @media (max-width: 767px)
+      margin-left: 10px
+.stage
+  display: inline-block
+  font-size: 14px/$f+rem
+  font-family: $Montserrat-Medium
+  padding: 2px 15px
+  +border-radius(5px)
+  white-space: nowrap
+  @media (max-width: 767px)
+    padding: 0 8px
+    font-size: 12px/$f+rem
+  &.during
+    color: #F47920
+    background: #FEF2E9
+  &.not_passed
+    color: #F42020
+    background: #FEE9E9
+  &.passed
+    color: #15B812
+    background: #E9FEEB
+
+.main_content_left
+  width: 60%
+  @media (max-width: 1100px)
+    width: 100%
+    margin-bottom: 30px
+
+
+
+.sidebar_right
+  width: 40%
+  @media (max-width: 1100px)
+    width: 100%
+
+
+.lesson
+  +border-radius(10px)
+  overflow: hidden
+  video, .video-js
+    width: 100%
+    height: 525px
+    @media (max-width: 1200px)
+      height: 500px
+    @media (max-width: 1100px)
+      height: 450px
+    @media (max-width: 767px)
+      height: 350px
+
+.lesson_name_nav
+  +flex
+  +wrap
+  +j-beetween
+  +ai-start
+  padding-top: 20px
+  margin-bottom: 20px
+  .lesson_name
+    color: #262626
+    font-size: 26px/$f+rem
+    width: calc(100% - 180px)
+    @media (max-width: 1200px)
+      font-size: 24px/$f+rem
+    @media (max-width: 1100px)
+      font-size: 22px/$f+rem
+    @media (max-width: 767px)
+      font-size: 20px/$f+rem
+      width: calc(100% - 90px)
+      line-height: 1.2
+    @media (max-width: 575px)
+      font-size: 18px/$f+rem
+
+    strong, b
+      font-family: $Montserrat-SemiBold
+  .lesson_nav
+    +flex
+    +ai-center
+    a
+      +flex
+      width: 45px
+      height: 45px
+      background: $blue
+      position: relative
+      +border-radius(50%)
+      @media (max-width: 767px)
+        width: 35px
+        height: 35px
+      &:before
+        +b_a
+        +m_a
+        width: 12px
+        height: 20px
+
+      &.lesson_prev
+        &.disabled
+          background: #F6F8FC
+          &:before
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='12' height='20' viewBox='0 0 12 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M9.94922 18.1021L1.6395 9.79233L9.94922 1.48261' stroke='%237A89A6' stroke-width='2.13679' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ")
+        &:before
+          background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='12' height='20' viewBox='0 0 12 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M9.94922 18.1021L1.6395 9.79233L9.94922 1.48261' stroke='%23fff' stroke-width='2.13679' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ")
+
+      &.lesson_next
+        margin-left: 20px
+        @media (max-width: 767px)
+          margin-left: 10px
+        &.disabled
+          background: #F6F8FC
+          &:before
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='12' height='20' viewBox='0 0 12 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M1.64844 1.48267L9.95816 9.79239L1.64844 18.1021' stroke='%237A89A6' stroke-width='2.13679' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ")
+        &:before
+          background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='12' height='20' viewBox='0 0 12 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M1.64844 1.48267L9.95816 9.79239L1.64844 18.1021' stroke='white' stroke-width='2.13679' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ")
+
+
+
+.stage_time
+  +flex
+  +ai-center
+  margin-bottom: 30px
+  .stage
+    margin-right: 20px
+  .time
+    color: #62606F
+
+
+
+.lesson_materials
+  margin-bottom: 30px
+  .documents
+    +flex
+    +ai-center
+    +wrap
+
+    li
+      margin-right: 40px
+      @media (max-width: 1200px)
+        margin-right: 30px
+      @media (max-width: 767px)
+        width: 100%
+        margin-right: 0
+
+      a
+        color: $blue
+        position: relative
+        display: inline-block
+        padding-left: 27px
+        &:before
+          +b_a
+          left: 0
+          top: 0
+          bottom: 0
+          margin: auto
+          width: 16px
+          height: 16px
+          background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cg clip-path='url(%23clip0)'%3e%3cpath d='M14.6439 1.67614C12.8903 -0.0396729 10.0869 -0.0392997 8.33369 1.67699L0.980778 9.02994C-0.348776 10.3908 -0.323367 12.5719 1.03753 13.9014C2.37604 15.2091 4.51374 15.2091 5.85225 13.9014L12.5104 7.24322C13.376 6.37765 13.376 4.97424 12.5104 4.10867C11.6449 3.2431 10.2414 3.2431 9.37588 4.10867L3.00717 10.4773C2.78503 10.7073 2.79141 11.0739 3.02141 11.296C3.24579 11.5127 3.60148 11.5127 3.82586 11.296L10.1945 4.92733C10.6169 4.52275 11.2872 4.53716 11.6917 4.95949C12.0841 5.36905 12.0841 6.015 11.6917 6.42457L5.03359 13.0827C4.13413 13.9694 2.68614 13.959 1.79947 13.0595C0.92175 12.1692 0.92175 10.739 1.79947 9.84859L9.15238 2.49565C10.4621 1.18543 12.586 1.18506 13.8962 2.49476C15.2064 3.80447 15.2068 5.92836 13.8971 7.23857L6.54413 14.5915C6.30127 14.7995 6.27297 15.165 6.48096 15.4079C6.68895 15.6507 7.05445 15.679 7.29731 15.471C7.31997 15.4516 7.34107 15.4305 7.36048 15.4079L14.7134 8.05492C16.4557 6.27428 16.4246 3.41838 14.6439 1.67614Z' fill='%23168EC4'/%3e%3c/g%3e%3cdefs%3e%3cclipPath id='clip0'%3e%3crect width='16' height='16' fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e ")
+
+
+.lesson_botton_nav
+  +flex
+  +ai-center
+  +wrap
+  li
+    margin-right: 20px
+    @media (max-width: 767px)
+      width: 100%
+      margin-right: 0
+      margin-bottom: 10px
+    a
+      font-size: 16px/$f+rem
+      &.show_more
+        @media (min-width: 1201px)
+          margin-left: 28px
+
+
+@media (max-width: 767px)
+  .materials
+    .materials_group
+      .materials_group_body, .materials_group_header
+        .materials_list
+          li
+            .stage
+              min-width: 25px
+              width: 25px
+              height: 25px
+              +border-radius(50%)
+              text-indent: -9999px
+              padding: 0
+              position: relative
+              &:before
+                +b_a
+                +m_a
+              &.during
+                &:before
+                  width: 8px
+                  height: 13px
+                  left: 3px
+                  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='8' height='13' viewBox='0 0 8 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M6.30894 11.7435L0.996094 8.57408V1.74347' stroke='%23F47920' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ")
+              &.not_passed
+                &:before
+                  width: 16px
+                  height: 16px
+                  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M4.46484 4.39191L11.5359 11.463' stroke='%23F53939' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/%3e%3cpath d='M11.5387 4.38748L4.46094 11.4653' stroke='%23F53939' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ")
+
+              &.passed
+                &:before
+                  width: 12px
+                  height: 9px
+                  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='12' height='9' viewBox='0 0 12 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M1 4.75991L4.33423 8.09279L11 1.42706' stroke='%2315B812' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ")
+
+            .d_flex
+              width: calc(100% - 55px)
+            .material_name
+              font-size: 16px/$f+rem
+              line-height: 27px
+            .time
+              font-size: 16px/$f+rem
+
+.sidebar_right
+  .materials
+    .materials_group
+      .materials_group_body
+        .materials_list
+          li
+            .stage
+              min-width: 25px
+              width: 25px
+              height: 25px
+              +border-radius(50%)
+              text-indent: -9999px
+              padding: 0
+              position: relative
+              &:before
+                +b_a
+                +m_a
+              &.during
+                &:before
+                  width: 8px
+                  height: 13px
+                  left: 3px
+                  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='8' height='13' viewBox='0 0 8 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M6.30894 11.7435L0.996094 8.57408V1.74347' stroke='%23F47920' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ")
+              &.not_passed
+                &:before
+                  width: 16px
+                  height: 16px
+                  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M4.46484 4.39191L11.5359 11.463' stroke='%23F53939' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/%3e%3cpath d='M11.5387 4.38748L4.46094 11.4653' stroke='%23F53939' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ")
+
+              &.passed
+                &:before
+                  width: 12px
+                  height: 9px
+                  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='12' height='9' viewBox='0 0 12 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M1 4.75991L4.33423 8.09279L11 1.42706' stroke='%2315B812' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ")
+
+            .d_flex
+              width: calc(100% - 55px)
+            .material_name
+              font-size: 16px/$f+rem
+              line-height: 27px
+            .time
+              font-size: 16px/$f+rem
