@@ -276,6 +276,7 @@ body
     font-size: 16px / $f+rem
   @media (max-width: 575px)
     font-size: 14px / $f+rem
+    line-height: 1.5
 
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, .bold, strong, b, .title
@@ -1889,6 +1890,9 @@ section.border
         left: 0
         top: 5px
         //background: $orange
+        @media (max-width: 575px)
+          top: 0
+
 
 
       &:after
@@ -1899,6 +1903,10 @@ section.border
         height: 12px
         background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='16' height='12' viewBox='0 0 16 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M15.7657 0.239312C15.4533 -0.0797705 14.9468 -0.0797705 14.6343 0.239312L5.04982 10.0277L1.3657 6.26526C1.0533 5.94618 0.546796 5.94621 0.234328 6.26526C-0.0781093 6.58431 -0.0781093 7.10159 0.234328 7.42067L4.48414 11.7608C4.79645 12.0798 5.30332 12.0796 5.61551 11.7608L15.7657 1.39475C16.0781 1.0757 16.0781 0.558394 15.7657 0.239312Z' fill='white'/%3e%3c/svg%3e ")
         opacity: 0
+        @media (max-width: 575px)
+          top: 0
+          bottom: 0
+          margin: auto
 
 
 
@@ -2846,11 +2854,13 @@ body
   line-height: 29px
   border-bottom: 2px dashed $orange
   padding: 0
+  text-decoration: none
   @media (max-width: 1200px)
     font-size: 16px/$f+rem
   @media (max-width: 575px)
     font-size: 14px/$f+rem
-  &:hover
+  &:hover, &:focus
+    text-decoration: none
     color: $orange_hover
     border-bottom: 2px dashed $orange_hover
 
@@ -3328,7 +3338,7 @@ body
     background: #E9FEEB
 
 .main_content_left
-  width: 60%
+  width: 67%
   @media (max-width: 1100px)
     width: 100%
     margin-bottom: 30px
@@ -3336,7 +3346,7 @@ body
 
 
 .sidebar_right
-  width: 40%
+  width: 33%
   @media (max-width: 1100px)
     width: 100%
 
@@ -3562,3 +3572,120 @@ body
               line-height: 27px
             .time
               font-size: 16px/$f+rem
+
+
+.testing_container
+  box-shadow: 0 22px 145px rgba(157, 160, 184, 0.1), 0 2.75474px 18.1562px rgba(151, 156, 193, 0.07)
+  +border-radius(10px)
+  background: #fff
+  padding: 40px
+  margin-bottom: 30px
+  @media (max-width: 1200px)
+    padding: 15px 20px
+  @media (max-width: 767px)
+    padding: 15px
+  p
+    margin-bottom: 25px
+  strong
+    font-family: $Montserrat-Medium
+
+
+
+.steps
+  +flex
+  +wrap
+  +ai-center
+  +j-center
+  margin-bottom: 25px
+  li
+    +flex
+    margin-bottom: 10px
+    padding: 0 10px
+    a
+      width: 50px
+      height: 50px
+      background: #F6F8FC
+      +border-radius(50%)
+      +flex
+      +ai-center
+      +j-center
+      color: #7A89A6
+      font: 20px/$f+rem $Montserrat-bold
+      @media (max-width: 1200px)
+        width: 45px
+        height: 45px
+      @media (max-width: 767px)
+        width: 40px
+        height: 40px
+
+
+      &:hover, &:focus
+        text-decoration: none
+      &.right
+        background: #E9FEEB
+        color: #5DAA1A
+      &.wrong
+        background: #FEF2E9
+        color: #F47920
+
+
+.questions
+  li
+    margin-bottom: 20px
+    @media (max-width: 767px)
+
+    .custom_checkbox
+      input
+        @media (min-width: 1201px)
+          + label
+            font-size: 18px/$f+rem
+            padding-left: 45px
+            &:before
+              width: 26px
+              height: 26px
+              top: 1px
+            &:after
+              left: 6px
+            a
+              color: $orange
+
+.b_btns
+  +flex
+  +j-beetween
+  +ai-center
+  +wrap
+  @media (max-width: 767px)
+    +j-start
+  .left
+    +flex
+    +ai-center
+    @media (max-width: 767px)
+
+      width: 100%
+    a
+      margin-right: 20px
+      margin-bottom: 10px
+
+
+.about_testing
+  box-shadow: 0 22px 145px rgba(157, 160, 184, 0.1), 0 2.75474px 18.1562px rgba(151, 156, 193, 0.07)
+  +border-radius(10px)
+  background: #fff
+  padding: 40px
+  margin-bottom: 30px
+  @media (max-width: 1200px)
+    padding: 15px 20px
+  @media (max-width: 767px)
+    padding: 15px
+
+
+.successfully, .not_successful
+  text-align: center
+  img
+    margin-bottom: 10px
+  p
+    margin-bottom: 10px
+  a
+    color: $orange
+    text-decoration: none
+    font-family: $Montserrat-bold
