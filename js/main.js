@@ -94,10 +94,31 @@ $(document).ready(function(){
         });
     }
 
-    $('select.custom_select').select2({
+
+
+
+
+
+    function formatRating (rating) {
+        if (!rating.id) {
+            return rating.text;
+        }
+        var baseUrl = "img/icons/rating/";
+        var $rating = $(
+            '<span class="review_select_rating"><span class="text">' + rating.text + '</span><img src="' + baseUrl + '/' + rating.element.value.toLowerCase() + '.svg" class="img-rating" /></span>'
+        );
+        return $rating;
+    };
+
+    $(".reviews_sort_select").select2({
+        templateResult: formatRating,
         minimumResultsForSearch: -1
     });
 
+
+    $('select.custom_select').select2({
+        minimumResultsForSearch: -1
+    });
 
 
     $('.materials_group_header').click(function(){

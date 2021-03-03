@@ -139,7 +139,15 @@ section.course_page_content
                                 .more(style="display:none") Для бесплатного курса для новичков - всё отлично. Но полбалла всё-таки снимаю за то, что есть небольшие нестыковки в занятиях (например, сам автор в некоторых лекциях говорит, что "это мы проходили в прошлом занятии", хотя по факту в прошлом занятии этого нет). Возможно, это из-за того, что курс как-то редактировался со временем.
                                 button.show_more(onclick="$(this).hide().prev().slideDown();") Подробнее
 
-                .h3.mt Отзывы
+                .reviews_sort
+                    .h3.mt Отзывы
+                    select.reviews_sort_select
+                        option(selected) Все
+                        option(value="5") 5,0
+                        option(value="4") 4,0
+                        option(value="3") 3,0
+                        option(value="2") 2,0
+                        option(value="1") 1,0
                 .users_list
                     -for(var a=1;a<=2;a++)
                         .users_item.d_flex
