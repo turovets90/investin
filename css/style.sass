@@ -2363,63 +2363,63 @@ body
       text-align: center
 
 
-    .form_control
-      width: 100%
-      height: 65px
-      +border-radius(5px)
-      border: 1px solid #DFDEE2
-      background: #fff
-      padding: 10px 20px
-      font-size: 18px/$f+rem
-      @media (max-width: 1200px)
-        font-size: 16px/$f+rem
-        height: 45px
-      @media (max-width: 575px)
-        font-size: 14px/$f+rem
-        height: 40px
-      &::-webkit-input-placeholder
-        color: #8D8D8D
-        font-size: 18px/$f+rem
-        font-family: $Montserrat-light
-        @media (max-width: 1200px)
-          font-size: 16px/$f+rem
-        @media (max-width: 575px)
-          font-size: 14px/$f+rem
-      &::-moz-placeholder
-        color: #8D8D8D
-        font-size: 18px/$f+rem
-        font-family: $Montserrat-light
-        @media (max-width: 1200px)
-          font-size: 16px/$f+rem
-        @media (max-width: 575px)
-          font-size: 14px/$f+rem
-      &::-ms-input-placeholder
-        color: #8D8D8D
-        font-size: 18px/$f+rem
-        font-family: $Montserrat-light
-        @media (max-width: 1200px)
-          font-size: 16px/$f+rem
-        @media (max-width: 575px)
-          font-size: 14px/$f+rem
-      &:-moz-placeholder
-        color: #8D8D8D
-        font-size: 18px/$f+rem
-        font-family: $Montserrat-light
-        @media (max-width: 1200px)
-          font-size: 16px/$f+rem
-        @media (max-width: 575px)
-          font-size: 14px/$f+rem
-      &:-ms-input-placeholder
-        color: #8D8D8D
-        font-size: 18px/$f+rem
-        font-family: $Montserrat-light
-        @media (max-width: 1200px)
-          font-size: 16px/$f+rem
-        @media (max-width: 575px)
-          font-size: 14px/$f+rem
-    textarea
-      &.form_control
-        height: 120px
+.form_control
+  width: 100%
+  height: 65px
+  +border-radius(5px)
+  border: 1px solid #DFDEE2
+  background: #fff
+  padding: 10px 20px
+  font-size: 18px/$f+rem
+  @media (max-width: 1200px)
+    font-size: 16px/$f+rem
+    height: 45px
+  @media (max-width: 575px)
+    font-size: 14px/$f+rem
+    height: 40px
+  &::-webkit-input-placeholder
+    color: #8D8D8D
+    font-size: 18px/$f+rem
+    font-family: $Montserrat-light
+    @media (max-width: 1200px)
+      font-size: 16px/$f+rem
+    @media (max-width: 575px)
+      font-size: 14px/$f+rem
+  &::-moz-placeholder
+    color: #8D8D8D
+    font-size: 18px/$f+rem
+    font-family: $Montserrat-light
+    @media (max-width: 1200px)
+      font-size: 16px/$f+rem
+    @media (max-width: 575px)
+      font-size: 14px/$f+rem
+  &::-ms-input-placeholder
+    color: #8D8D8D
+    font-size: 18px/$f+rem
+    font-family: $Montserrat-light
+    @media (max-width: 1200px)
+      font-size: 16px/$f+rem
+    @media (max-width: 575px)
+      font-size: 14px/$f+rem
+  &:-moz-placeholder
+    color: #8D8D8D
+    font-size: 18px/$f+rem
+    font-family: $Montserrat-light
+    @media (max-width: 1200px)
+      font-size: 16px/$f+rem
+    @media (max-width: 575px)
+      font-size: 14px/$f+rem
+  &:-ms-input-placeholder
+    color: #8D8D8D
+    font-size: 18px/$f+rem
+    font-family: $Montserrat-light
+    @media (max-width: 1200px)
+      font-size: 16px/$f+rem
+    @media (max-width: 575px)
+      font-size: 14px/$f+rem
+textarea
+  &.form_control
+    height: 120px
 
 .contact_content
   .page_title
@@ -3689,3 +3689,210 @@ body
     color: $orange
     text-decoration: none
     font-family: $Montserrat-bold
+
+
+.fancybox-is-open
+  .fancybox-bg
+    background: rgba(47, 60, 76, 0.3)
+.fancybox-content
+  padding: 40px
+  @media (max-width: 1200px)
+    padding: 20px
+  @media (max-width: 767px)
+    padding: 15px
+
+
+.fancybox-slide--html
+  .fancybox-close-small
+    width: 25px
+    height: 25px
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='25' height='26' viewBox='0 0 25 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M14.7904 13.4303L24.5249 3.69553C25.1584 3.06232 25.1584 2.03851 24.5249 1.4053C23.8917 0.772095 22.8679 0.772095 22.2347 1.4053L12.4999 11.1401L2.76536 1.4053C2.13185 0.772095 1.10834 0.772095 0.475129 1.4053C-0.158376 2.03851 -0.158376 3.06232 0.475129 3.69553L10.2096 13.4303L0.475129 23.1651C-0.158376 23.7983 -0.158376 24.8221 0.475129 25.4554C0.790696 25.7712 1.20562 25.9299 1.62024 25.9299C2.03487 25.9299 2.4495 25.7712 2.76536 25.4554L12.4999 15.7206L22.2347 25.4554C22.5506 25.7712 22.9652 25.9299 23.3798 25.9299C23.7944 25.9299 24.2091 25.7712 24.5249 25.4554C25.1584 24.8221 25.1584 23.7983 24.5249 23.1651L14.7904 13.4303Z' fill='black' fill-opacity='0.3'/%3e%3c/svg%3e ")
+    padding: 0
+    top: 30px
+    right: 30px
+    @media (max-width: 1200px)
+      top: 20px
+      right: 20px
+    svg
+      display: none
+
+
+.modal_window
+  display: none
+  +border-radius(20px)
+  .h2, h2
+    font-family: $Montserrat-SemiBold
+    text-align: center
+    margin: 40px 0
+
+
+  .modal_author
+    +flex
+    +ai-center
+    margin-bottom: 40px
+    .author_photo
+      width: 65px
+      min-width: 65px
+      height: 65px
+      +border-radius(50%)
+      background-position: center
+      background-size: cover
+      margin-right: 20px
+      margin-bottom: 0
+  .small
+    color: #8D8D8D
+    display: block
+    @media (max-width: 1200px)
+      font-size: 14px/$f+rem
+    @media (max-width: 767px)
+      font-size: 12px/$f+rem
+  .text
+    font-size: 24px/$f+rem
+    font-family: $Montserrat-SemiBold
+    @media (max-width: 1200px)
+      font-size: 20px/$f+rem
+    @media (max-width: 767px)
+      font-size: 16px/$f+rem
+  .cours_name
+    margin-bottom: 25px
+  .price
+    margin-bottom: 25px
+    strong
+      color: #333333
+
+  .btn_group
+    .col
+      width: 50%
+      .btn
+        width: 100%
+        text-align: center
+
+
+
+#reviewStars-input
+  input
+    &:checked
+      ~ label
+        background: url(../img/icons/r_star.svg)
+        width: 30px
+        height: 28px
+#reviewStars-input
+  label
+    background: url(../img/icons/r_star.svg)
+    width: 30px
+    height: 28px
+#reviewStars-input
+  label
+    &:hover
+      background: url(../img/icons/r_star.svg)
+      width: 30px
+      height: 28px
+#reviewStars-input
+  label
+    &:hover
+      ~ label
+        background: url(../img/icons/r_star.svg)
+        width: 30px
+        height: 28px
+#reviewStars-input
+  overflow: hidden
+  position: relative
+  float: left
+//padding-top: 8px
+
+#reviewStars-input
+  input
+    &:checked
+      ~ label
+        background: url(../img/icons/r_star_active.svg)
+        width: 30px
+        height: 28px
+
+
+#reviewStars-input
+  input
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0)
+    opacity: 0
+    width: 0
+    //height: 20px
+    top: 0
+    z-index: 0
+    position: absolute
+
+
+#reviewStars-input
+  label
+    background-position: 0 0
+    width: 30px
+    height: 28px
+    float: right
+    cursor: pointer
+    position: relative
+    z-index: 1
+    margin-right: 10px
+    margin-bottom: 0
+
+.clear
+  clear: both
+.modal_form
+  .field
+    margin-bottom: 30px
+    > label
+      display: block
+      color: #8D8D8D
+      margin-bottom: 10px
+
+    textarea
+      height: 235px
+      font-family: $Montserrat-light
+      @media (max-width: 1200px)
+        font-size: 16px/$f+rem
+      @media (max-width: 575px)
+        font-size: 14px/$f+rem
+      &::-webkit-input-placeholder
+        color: #8D8D8D
+        font-size: 18px/$f+rem
+        font-family: $Montserrat-light
+        @media (max-width: 1200px)
+          font-size: 16px/$f+rem
+        @media (max-width: 575px)
+          font-size: 14px/$f+rem
+      &::-moz-placeholder
+        color: #8D8D8D
+        font-size: 18px/$f+rem
+        font-family: $Montserrat-light
+        @media (max-width: 1200px)
+          font-size: 16px/$f+rem
+        @media (max-width: 575px)
+          font-size: 14px/$f+rem
+      &::-ms-input-placeholder
+        color: #8D8D8D
+        font-size: 18px/$f+rem
+        font-family: $Montserrat-light
+        @media (max-width: 1200px)
+          font-size: 16px/$f+rem
+        @media (max-width: 575px)
+          font-size: 14px/$f+rem
+      &:-moz-placeholder
+        color: #8D8D8D
+        font-size: 18px/$f+rem
+        font-family: $Montserrat-light
+        @media (max-width: 1200px)
+          font-size: 16px/$f+rem
+        @media (max-width: 575px)
+          font-size: 14px/$f+rem
+      &:-ms-input-placeholder
+        color: #8D8D8D
+        font-size: 18px/$f+rem
+        font-family: $Montserrat-light
+        @media (max-width: 1200px)
+          font-size: 16px/$f+rem
+        @media (max-width: 575px)
+          font-size: 14px/$f+rem
+
+  .btn_box
+    +flex
+    +j-end
+    .btn
+      &:last-child
+        margin-left: 20px
