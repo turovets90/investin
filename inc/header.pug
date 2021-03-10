@@ -8,7 +8,7 @@
             .col.col_right
                 span Закончится через
                 .timer
-                    <script src="//megatimer.ru/get/2b67b12420473af57a28135d4f37dce1.js"></script>
+                    //<script src="//megatimer.ru/get/2b67b12420473af57a28135d4f37dce1.js"></script>
 -var catalog1=['Бизнес','ИТ и ПО','Финансы и бухгалтерия','Маркетинг и реклама','Здоворье и фитнес','Архитектура и дизайн','Стиль жизни ','Фотография','Музыка','Академические дисциплины','Иностранные языки','Другие','Управление проектами','Финансовый анализ','HTML5, CSS и  JavaScript для начинающих','Управление проектами','Финансовый анализ','HTML5, CSS и  JavaScript для начинающих'];
 header
     .h_row
@@ -27,6 +27,12 @@ header
 
 
         .h_col_center
+            button.h_user_dropdown
+                if page.title ==='Главная'
+                    img(src="img/icons/lock.svg")
+                else
+                    img(src="img/icons/user.svg")
+
             button.h_search_toggler
             .h_search
                 form.h_form
@@ -61,6 +67,12 @@ header
                                     a(href="#") История оплаты
                                 li
                                     a(href="#") Выйти
+            button.h_search_toggler
+            .h_search
+                form.h_form
+                    button.btn_submit(type="submit")
+                    input.search_input(type="text" placeholder="Чему бы вы хотели научиться? ")
+                    button.btn_reset(type="reset")
 
 
 

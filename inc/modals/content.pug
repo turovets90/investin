@@ -1,10 +1,11 @@
 section
     .container
         h1.page_title Английский Язык для Начинающих на все 100!
-        a.btn.btn_blue(data-fancybox="modal_review" data-src="#modal_review" href="javascript:;" ) Оставь отзыв об этом курсе!
-        a.btn.btn_blue(data-fancybox="order" data-src="#order" href="javascript:;" ) Подтверждение заказа
+        a.btn.btn_blue.popup-with-form(href="#modal_review") Оставь отзыв об этом курсе!
+        a.btn.btn_blue.popup-with-form(href="#order" ) Подтверждение заказа
 
-        .modal_window#modal_review
+        #modal_review.modal_window
+            <button title="Close (Esc)" type="button" class="mfp-close">×</button>
             .h2 Оставь отзыв об этом курсе!
             .modal_author
                 .author_photo(style="background-image:url(img/examples/Ellipse4.png)")
@@ -43,7 +44,8 @@ section
                     button.btn.btn_blue(type="submit") Оставить отзыв
 
 
-        .modal_window#order
+        #order.modal_window
+            <button title="Close (Esc)" type="button" class="mfp-close">×</button>
             .h2 Подтверждение заказа
             .modal_author
                 .author_photo(style="background-image:url(img/examples/Ellipse4.png)")

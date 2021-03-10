@@ -1,7 +1,7 @@
 //@import "bootstrap"
 @import "video"
 @import "slick-less"
-@import "fancybox"
+@import "magnific-popup"
 @import "select2"
 
 
@@ -270,13 +270,13 @@ body
   margin: 0
   padding: 0
   color: #333
-  font: 18px / $f+rem/31px  $Montserrat-Regular
+  font: 18px/31px  $Montserrat-Regular
   background: #fff
   @media (max-width: 1200px)
-    font-size: 16px / $f+rem
+    font-size: 16px
   @media (max-width: 575px)
-    font-size: 14px / $f+rem
-    line-height: 1.5
+    font-size: 14px
+    //line-height: 1.5
 
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, .bold, strong, b, .title
@@ -348,6 +348,9 @@ h3, .h3
   margin-left: auto
   margin-right: auto
   padding: 0 15px
+  @media (max-width: 1450px)
+    @media (min-width: 768px)
+      padding: 0 30px
 
 .row
   display: -ms-flexbox
@@ -367,8 +370,14 @@ header
   background: $light
   padding: 0 20px
   position: relative
+  max-width: 1920px
+  margin: auto
   @media (max-width: 1400px)
     padding: 0 15px
+  @media (max-width: 1100px)
+    padding: 10px 15px
+  @media (max-width: 767px)
+    padding: 10px
 
 .h_row
   +flex
@@ -387,7 +396,7 @@ header
     @media (max-width: 767px)
       width: 60%
     @media (max-width: 575px)
-      width: calc(100% - 43px)
+      width: calc(100% - 96px)
     .logo
       margin-right: 45px
       padding-top: 0 !important
@@ -401,7 +410,7 @@ header
       a
         display: inline-block
         img
-          @media (max-width: 767px)
+          @media (max-width: 1100px)
             max-height: 80px
     > div
       padding: 34px 10px
@@ -417,15 +426,18 @@ header
       width: calc(100% - 993px)
     @media (max-width: 1300px)
       padding: 34px 0
+      @media (min-width: 1101px)
+        display: none
     @media (max-width: 1100px)
       width: 50%
       order: 3
       -webkit-order: 3
       padding: 0  0 0 10px
+      position: initial
     @media (max-width: 767px)
       width: 40%
     @media (max-width: 575px)
-      width: 43px
+      width: 96px
 
 
     > div
@@ -433,6 +445,8 @@ header
         padding: 34px 10px
       @media (max-width: 1100px)
         padding:  10px
+
+
 
 
   .h_col_right
@@ -445,10 +459,17 @@ header
       -webkit-order: 1
       +j-center
     @media (max-width: 1100px)
-      padding-top: 10px
-    @media (max-width: 575px)
-      padding-top: 5px
-      +j-center
+      padding: 20px
+      position: absolute
+      top: 100%
+      right: 0
+      box-shadow: 0 22px 145px rgb(165 170 215 / 7%), 0 2.75474px 18.1562px rgb(165 170 215 / 4%)
+      background: #fff
+      z-index: 999
+      max-width: 300px
+      display: none
+      &.open
+        display: block
     > div
       padding: 34px 10px
       @media (max-width: 1100px)
@@ -461,6 +482,12 @@ header
           padding: 0 10px
         @media (max-width: 575px)
           padding: 0
+    @media (min-width: 1301px)
+      .h_search_toggler, .h_search
+        display: none
+    @media (max-width: 1100px)
+      .h_search_toggler, .h_search
+        display: none
 
 
 .become_teacher_box
@@ -470,20 +497,20 @@ header
     text-decoration: none
     white-space: nowrap
     display: inline-block
-    @media (max-width: 575px)
+    @media (max-width: 1100px)
       font-size: 11px / $f+rem
 
 .h_user_box
-  @media (max-width: 575px)
+  @media (max-width: 1100px)
     padding: 0 10px
 .h_user_menu
   +flex
   +ai-center
-  +wrap
+  //+wrap
   li
     &:first-child
       margin-right: 20px
-      @media (max-width: 575px)
+      @media (max-width: 1100px)
         margin-right: 5px
 
 .position-relative
@@ -743,7 +770,8 @@ header
       width: 175px
       padding-left: 47px
     @media (max-width: 375px)
-      width: 140px
+      width: 110px
+      padding-left: 35px
     @media (min-width: 1201px)
       &:hover, &.act
         background: none
@@ -773,7 +801,10 @@ header
       +transition($transition_default)
       background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='23' height='19' viewBox='0 0 23 19' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M21.8057 5.48033C22.063 5.38889 22.2347 5.1453 22.2344 4.87228C22.234 4.59925 22.0617 4.35609 21.8043 4.26526L11.4488 0.611583C11.3101 0.562598 11.1587 0.562598 11.02 0.611583L0.664493 4.26526C0.407024 4.35605 0.234719 4.59925 0.234376 4.87228C0.234032 5.1453 0.405778 5.38889 0.663032 5.48033L4.76522 6.93869V11.1431C4.76522 11.837 5.48911 12.4238 6.91679 12.8872C8.16121 13.2911 9.69459 13.5135 11.2344 13.5135C12.7742 13.5135 14.3076 13.2911 15.552 12.8872C16.9797 12.4238 17.7036 11.837 17.7036 11.1431V6.93869L19.3973 6.33657V12.1624C18.6441 12.4288 18.1029 13.1476 18.1029 13.9908C18.1029 14.8341 18.6441 15.5529 19.3973 15.8193V18.2807C19.3973 18.6367 19.6859 18.9252 20.0419 18.9252C20.3978 18.9252 20.6864 18.6367 20.6864 18.2807V15.8193C21.4396 15.5529 21.9808 14.8341 21.9808 13.9908C21.9808 13.1476 21.4396 12.4288 20.6864 12.1624V5.87826L21.8057 5.48033ZM20.0418 14.6407C19.6834 14.6407 19.3919 14.3492 19.3919 13.9908C19.3919 13.6324 19.6834 13.3409 20.0418 13.3409C20.4002 13.3409 20.6917 13.6324 20.6917 13.9908C20.6917 14.3492 20.4002 14.6407 20.0418 14.6407ZM11.2344 1.90284L19.6592 4.87537L11.2344 7.87042L2.80954 4.87533L11.2344 1.90284ZM16.4145 11.0459C16.291 11.1704 15.8487 11.4687 14.8506 11.7534C13.7858 12.0572 12.5015 12.2244 11.2344 12.2244C9.96723 12.2244 8.68298 12.0572 7.61813 11.7534C6.62 11.4687 6.17777 11.1705 6.05423 11.0459V7.39695L11.0185 9.16176C11.0883 9.1866 11.1613 9.19902 11.2343 9.19902C11.3074 9.19902 11.3804 9.1866 11.4502 9.16176L16.4144 7.39695V11.0459H16.4145Z' fill='white'/%3e%3c/svg%3e ")
       @media (max-width: 575px)
-        left: 13px
+        left: 8px
+      @media (max-width: 375px)
+        left: 5px
+
     &:after
       +b_a
       right: 23px
@@ -785,7 +816,10 @@ header
       +transition($transition_default)
       background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='13' height='8' viewBox='0 0 13 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M0.343759 0.989421L0.343759 0.989421C0.0645799 1.2742 0.0645814 1.73513 0.343757 2.01991L0.343759 2.01991L5.72646 7.51058L5.72627 7.51077L5.73178 7.51562L5.801 7.57659L5.80082 7.5768L5.80674 7.58128C6.08809 7.79426 6.48755 7.77046 6.74229 7.51058L12.125 2.01991L12.1251 2.0201L12.1299 2.01451L12.1897 1.94388L12.1899 1.94406L12.1942 1.93811C12.4017 1.65285 12.3789 1.24849 12.125 0.989421L12.1251 0.989232L12.1196 0.984381L12.0504 0.923414L12.0506 0.923207L12.0447 0.918723C11.7633 0.705773 11.3639 0.729578 11.1092 0.989421L6.23437 5.9622L1.35956 0.989422L1.35975 0.989233L1.35423 0.984378L1.285 0.92341L1.28518 0.923203L1.27926 0.918722C0.997909 0.705774 0.598494 0.729577 0.343759 0.989421Z' fill='white' stroke='white' stroke-width='0.2'/%3e%3c/svg%3e ")
       @media (max-width: 575px)
-        right: 13px
+        right: 8px
+      @media (max-width: 375px)
+        right: 5px
+
 
 
 
@@ -793,7 +827,7 @@ header
 .h_search_toggler
   width: 70px
   height: 70px
-  border: 2px solid $blue
+  border: 0
   position: relative
   +border-radius(5px)
   background: #fff
@@ -803,9 +837,7 @@ header
   @media (max-width: 575px)
     width: 43px
     height: 43px
-  @media (max-width: 1100px)
-    @media (min-width: 576px)
-      display: none
+
   &:before
     +b_a
     +m_a
@@ -834,22 +866,18 @@ header
 
 .h_search
   @media (max-width: 1300px)
-    @media (min-width: 1101px)
-      display: none
-      position: absolute
-      top: 100%
-      left: 0
-      z-index: 2
-      padding: 0
-      min-width: 500px
-  @media (max-width: 575px)
     display: none
     position: absolute
-    top: calc(100% + 20px)
+    top: 100%
     right: 0
     z-index: 2
+    min-width: 500px
     padding: 0 !important
+  @media (max-width: 1100px)
     min-width: 300px
+    //left: 0
+    //right: initial
+
 
 
 
@@ -866,7 +894,7 @@ header
     +flex
     +ai-center
     height: 70px
-    padding: 10px 40px 10px 23px
+
     @media (max-width: 1100px)
       height: 57px
 
@@ -874,7 +902,14 @@ header
       width: 23px
       height: 23px
       border: 0
+      position: absolute
+      top: 0
+      bottom: 0
+      left: 24px
+      margin: auto
       background: #fff url("data:image/svg+xml;charset=UTF-8,%3csvg width='23' height='23' viewBox='0 0 23 23' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.7305 18.8333C8.17412 18.8333 4.48047 15.1397 4.48047 10.5833C4.48047 6.02699 8.17412 2.33334 12.7305 2.33334C17.2868 2.33334 20.9805 6.02699 20.9805 10.5833C20.9805 15.1397 17.2868 18.8333 12.7305 18.8333Z' stroke='%23168EC4' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3e%3cpath d='M2.64583 20.6667L6.3125 17' stroke='%23168EC4' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ")
+      @media (max-width: 1100px)
+        left: 10px
       &:hover
         background: #fff url("data:image/svg+xml;charset=UTF-8,%3csvg width='23' height='23' viewBox='0 0 23 23' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.7305 18.8333C8.17412 18.8333 4.48047 15.1397 4.48047 10.5833C4.48047 6.02699 8.17412 2.33334 12.7305 2.33334C17.2868 2.33334 20.9805 6.02699 20.9805 10.5833C20.9805 15.1397 17.2868 18.8333 12.7305 18.8333Z' stroke='%23168EC4' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3e%3cpath d='M2.64583 20.6667L6.3125 17' stroke='%23007BB3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ")
     .btn_reset
@@ -906,10 +941,13 @@ header
       +border-radius(0)
       color: #333
       font-size: 18px / $f+rem
-      padding: 0 15px
-      width: calc(100% - 23px)
+      padding: 0 40px 0 65px
+      height: 100%
+      width: 100%
       @media (max-width: 1300px)
         font-size: 16px / $f+rem
+      @media (max-width: 1100px)
+        padding: 0 40px
       &::-webkit-input-placeholder
         color: #333
         font-size: 18px / $f+rem
@@ -961,6 +999,8 @@ header
     height: 400px
   .main_banner_content
     max-width: 745px
+    @media (max-width: 1200px)
+      max-width: 65%
     .title
       font: 62px / $f+rem/1.1 $Montserrat-bold
       position: relative
@@ -973,8 +1013,10 @@ header
       @media (max-width: 1200px)
         font-size: 35px / $f+rem
       @media (max-width: 767px)
-        font-size: 28px / $f+rem
+        font-size: 24px / $f+rem
         margin-bottom: 15px
+      @media (max-width: 575px)
+        font-size: 20px / $f+rem
       .line
         display: inline-block
         position: relative
@@ -1001,7 +1043,9 @@ header
         margin-bottom: 25px
         line-height: 1.2
       @media (max-width: 767px)
-        font-size: 16px / $f+rem
+        font-size: 14px / $f+rem
+      @media (max-width: 575px)
+
 
     .btn
       font-size: 24px / $f+rem
@@ -1039,7 +1083,7 @@ section
     padding: 60px 0 80px
   @media (max-width: 1200px)
     padding: 40px 0 60px
-  @media (max-width: 767px)
+  //@media (max-width: 767px)
     padding: 20px 0 30px
   .sub_title
     font-size: 18px / $f+rem
@@ -1154,7 +1198,7 @@ section
   +j-beetween
   height: 250px
   @media (max-width: 1200px)
-    padding: 10px 15px 15px
+    padding: 15px
   @media (max-width: 767px)
     height: auto
 
@@ -1183,11 +1227,13 @@ section
   @media (max-width: 1200px)
     line-height: 1.2
   @media (max-width: 767px)
-    margin-bottom: 30px
+    margin-bottom: 20px
+  @media (max-width: 575px)
+    margin-bottom: 10px
   &:before
     +b_a
     left: 0
-    top: 3px
+    top: 0
     width: 20px
     height: 20px
     background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M2 18L2.06495 17.5992C2.28397 16.2475 3.17937 15.0944 4.49899 14.7289C5.80581 14.367 7.59939 14 9.5 14C11.4006 14 13.1942 14.367 14.501 14.7289C15.8206 15.0944 16.716 16.2475 16.935 17.5992L17 18' stroke='%23168EC4' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3e%3cpath d='M10 10C12.2091 10 14 8.20914 14 6C14 3.79086 12.2091 2 10 2C7.79086 2 6 3.79086 6 6C6 8.20914 7.79086 10 10 10Z' stroke='%23168EC4' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ")
@@ -1196,18 +1242,19 @@ section
 
 .rating
   +flex
-  +ai-center
+  +ai-end
   margin-bottom: 18px
   strong
     color: $orange
     font-family: $Montserrat-bold
-    line-height: 1
+    line-height: 0.7
     +flex
     margin-right: 12px
+
   .counter
     font-size: 14px/$f+rem
     +flex
-    line-height: 1
+    line-height: 0.7
 
   .stars
     +flex
@@ -1286,6 +1333,7 @@ section
       width: auto
       +flex
       +ai-center
+      +wrap
       margin-top: 10px
       li
         +flex
@@ -1390,6 +1438,8 @@ footer
   background: #2F3C4C
   color: #fff
   padding-top: 45px
+  @media (max-width: 575px)
+    text-align: center
   a
     color: #fff
     font-size: 14px/$f+rem
@@ -1410,6 +1460,7 @@ footer
         max-width: 100%
       .logo
         margin-bottom: 10px
+
       ul
         margin-bottom: 10px
         li
@@ -1421,6 +1472,8 @@ footer
     .f_col_right
       width: 100%
       max-width: 210px
+      @media (max-width: 575px)
+        margin: auto
 
       .btn
         width: 100%
@@ -1452,6 +1505,9 @@ footer
         width: 100%
       ul
         margin-bottom: 5px
+        li
+          @media (max-width: 575px)
+            margin-bottom: 10px
       .column3
         column-count: 3
         -webkit-column-count: 3
@@ -1495,6 +1551,8 @@ footer
     margin-top: 22px
     @media (max-width: 1100px)
       +j-start
+    @media (max-width: 575px)
+      +j-center
     li
       padding: 0 8px
       @media (max-width: 1100px)
@@ -1517,6 +1575,7 @@ footer
     +ai-start
     img
       margin-right: 8px
+      margin-top: -7px
     .text
       font-size: 14px/$f+rem
       line-height: 24px
@@ -1536,8 +1595,13 @@ footer
   background: $orange
   position: relative
   z-index: 2
+  @media (max-width: 1200px)
+    padding: 40px 0
   @media (min-width: 1101px)
     padding: 0
+  @media (max-width: 767px)
+    text-align: center
+
   &:before
     +b_a
     background: url(../img/bgs/become_bg.png)
@@ -1572,6 +1636,8 @@ footer
     //min-height: 346px
     width: 100%
     .text
+      @media (max-width: 767px)
+        margin: auto
       .title
         color: #fff
         font-size: 36px/$f+rem
@@ -1655,6 +1721,7 @@ footer
     border-image: url(../img/bgs/c_bg.svg) 0 fill stretch
     position: relative
     padding: 30px
+    +transition($transition_default)
     @media (max-width: 767px)
       padding: 15px 15px 30px
       height: 120px
@@ -1908,11 +1975,12 @@ section.border
 
       &:after
         +b_a
-        left: 2px
-        top: 9px
-        width: 16px
+        left: 4px
+        top: 8px
+        width: 12px
         height: 12px
-        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='16' height='12' viewBox='0 0 16 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M15.7657 0.239312C15.4533 -0.0797705 14.9468 -0.0797705 14.6343 0.239312L5.04982 10.0277L1.3657 6.26526C1.0533 5.94618 0.546796 5.94621 0.234328 6.26526C-0.0781093 6.58431 -0.0781093 7.10159 0.234328 7.42067L4.48414 11.7608C4.79645 12.0798 5.30332 12.0796 5.61551 11.7608L15.7657 1.39475C16.0781 1.0757 16.0781 0.558394 15.7657 0.239312Z' fill='white'/%3e%3c/svg%3e ")
+        background: url("data:image/svg+xml;charset=UTF-8,%3csvg width='16' height='12' viewBox='0 0 16 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M15.7657 0.239312C15.4533 -0.0797705 14.9468 -0.0797705 14.6343 0.239312L5.04982 10.0277L1.3657 6.26526C1.0533 5.94618 0.546796 5.94621 0.234328 6.26526C-0.0781093 6.58431 -0.0781093 7.10159 0.234328 7.42067L4.48414 11.7608C4.79645 12.0798 5.30332 12.0796 5.61551 11.7608L15.7657 1.39475C16.0781 1.0757 16.0781 0.558394 15.7657 0.239312Z' fill='white'/%3e%3c/svg%3e ") no-repeat
+        background-size: cover
         opacity: 0
         @media (max-width: 575px)
           top: 0
@@ -1971,7 +2039,7 @@ section.border
         .card_item_name
           +flex
           +ai-center
-          margin-bottom: 2px
+          margin-bottom: 10px
           @media (min-width: 1201px)
             font-size: 24px/$f+rem
           img
@@ -2272,13 +2340,10 @@ body
     position: relative
     padding: 18px 40px
     @media (max-width: 1200px)
-      padding: 10px 20px
+      padding: 10px 30px
     @media (max-width: 1100px)
-      padding: 5px 15px
-    @media (max-width: 767px)
-      padding: 5px 10px
-    @media (max-width: 575px)
-      padding: 0 10px
+      padding: 5px 20px
+      margin-bottom: 10px
 
     &:before
       +b_a
@@ -2289,6 +2354,9 @@ body
       height: 100%
       background: $blue
       opacity: 0
+      @media (max-width: 1100px)
+        right: initial
+        left: 0
     &.active
       &:before
         opacity: 1
@@ -2302,6 +2370,7 @@ body
       @media (max-width: 1200px)
         font-size: 18px/$f+rem
         line-height: 1.2
+
       @media (max-width: 991px)
         font-size: 16px/$f+rem
       @media (max-width: 767px)
@@ -2384,8 +2453,9 @@ body
   +border-radius(5px)
   border: 1px solid #DFDEE2
   background: #fff
-  padding: 10px 20px
+  padding: 0 20px
   font-size: 18px/$f+rem
+  font-family: $Montserrat-Regular
   @media (max-width: 1200px)
     font-size: 16px/$f+rem
     height: 45px
@@ -2605,7 +2675,7 @@ textarea
   @media (max-width: 1200px)
     padding: 30px 0
   @media (max-width: 991px)
-    padding: 20px 0 0
+    padding: 20px 0 10px
 
   .course_adv_row
     +flex
@@ -2618,7 +2688,7 @@ textarea
         width: 25%
       @media (max-width: 991px)
         width: 33.33%
-        margin-bottom: 20px
+        margin-bottom: 10px
       @media (max-width: 767px)
         width: 50%
       @media (max-width: 575px)
@@ -2634,6 +2704,10 @@ textarea
         +ai-center
         +j-center
         margin-right: 15px
+        @media (max-width: 767px)
+          width: 40px
+          min-width: 40px
+          height: 40px
       .text
         color: #fff
         font: 16px/$f+rem $Montserrat-SemiBold
@@ -3036,6 +3110,8 @@ textarea
               @media (max-width: 767px)
                 margin-right: 5px
                 padding-top: 0
+              img
+                max-width: 20px
             span
               color: #333333
               @media (max-width: 767px)
@@ -3096,6 +3172,7 @@ textarea
     width: 60%
   @media (max-width: 1100px)
     width: 100%
+    order: 2
 .course_page_sidebar
   width: 33%
   text-align: right
@@ -3108,6 +3185,7 @@ textarea
     width: 40%
   @media (max-width: 1100px)
     width: 100%
+    order: 1
 .users_list
   .users_item
     background: #FFFFFF
@@ -3429,6 +3507,7 @@ textarea
           &:before
             background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='12' height='20' viewBox='0 0 12 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M9.94922 18.1021L1.6395 9.79233L9.94922 1.48261' stroke='%23fff' stroke-width='2.13679' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ")
         &:before
+          right: 3px
           background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='12' height='20' viewBox='0 0 12 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M9.94922 18.1021L1.6395 9.79233L9.94922 1.48261' stroke='%237A89A6' stroke-width='2.13679' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ")
 
       &.lesson_next
@@ -3440,6 +3519,7 @@ textarea
           &:before
             background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='12' height='20' viewBox='0 0 12 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M1.64844 1.48267L9.95816 9.79239L1.64844 18.1021' stroke='white' stroke-width='2.13679' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ")
         &:before
+          left: 3px
           background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='12' height='20' viewBox='0 0 12 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M1.64844 1.48267L9.95816 9.79239L1.64844 18.1021' stroke='%237A89A6' stroke-width='2.13679' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ")
 
 
@@ -3710,40 +3790,47 @@ textarea
 .fancybox-is-open
   .fancybox-bg
     background: rgba(47, 60, 76, 0.3)
-.fancybox-content
+
+
+//.fancybox-content, .mfp-content
+
+
+
+
+button.mfp-close
+  font-size: 0
+  opacity: 1
+  width: 25px
+  height: 25px
+  background: url("data:image/svg+xml;charset=UTF-8,%3csvg width='25' height='26' viewBox='0 0 25 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M14.7904 13.4303L24.5249 3.69553C25.1584 3.06232 25.1584 2.03851 24.5249 1.4053C23.8917 0.772095 22.8679 0.772095 22.2347 1.4053L12.4999 11.1401L2.76536 1.4053C2.13185 0.772095 1.10834 0.772095 0.475129 1.4053C-0.158376 2.03851 -0.158376 3.06232 0.475129 3.69553L10.2096 13.4303L0.475129 23.1651C-0.158376 23.7983 -0.158376 24.8221 0.475129 25.4554C0.790696 25.7712 1.20562 25.9299 1.62024 25.9299C2.03487 25.9299 2.4495 25.7712 2.76536 25.4554L12.4999 15.7206L22.2347 25.4554C22.5506 25.7712 22.9652 25.9299 23.3798 25.9299C23.7944 25.9299 24.2091 25.7712 24.5249 25.4554C25.1584 24.8221 25.1584 23.7983 24.5249 23.1651L14.7904 13.4303Z' fill='black' fill-opacity='0.3'/%3e%3c/svg%3e ") no-repeat
+  background-size: contain
+  top: 30px
+  right: 30px
+  @media (max-width: 1200px)
+    top: 10px
+    right: 10px
+
+
+.mfp-content
+  .modal_window
+    display: block
+
+  #order
+    max-width: 700px
+
+  #modal_review
+    max-width: 900px
+.modal_window
+  display: none
+  background: #fff
+  +border-radius(20px)
   padding: 40px
+  position: relative
+  margin: auto
   @media (max-width: 1200px)
     padding: 20px
   @media (max-width: 767px)
     padding: 15px
-
-
-.fancybox-slide--html
-  .fancybox-close-small
-    @media (max-width: 767px)
-      right: 5px
-      top: 5px
-      padding: 5px
-      svg
-        *
-          fill: #DFDEE2
-    @media (min-width: 1101px)
-      width: 25px
-      height: 25px
-      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='25' height='26' viewBox='0 0 25 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M14.7904 13.4303L24.5249 3.69553C25.1584 3.06232 25.1584 2.03851 24.5249 1.4053C23.8917 0.772095 22.8679 0.772095 22.2347 1.4053L12.4999 11.1401L2.76536 1.4053C2.13185 0.772095 1.10834 0.772095 0.475129 1.4053C-0.158376 2.03851 -0.158376 3.06232 0.475129 3.69553L10.2096 13.4303L0.475129 23.1651C-0.158376 23.7983 -0.158376 24.8221 0.475129 25.4554C0.790696 25.7712 1.20562 25.9299 1.62024 25.9299C2.03487 25.9299 2.4495 25.7712 2.76536 25.4554L12.4999 15.7206L22.2347 25.4554C22.5506 25.7712 22.9652 25.9299 23.3798 25.9299C23.7944 25.9299 24.2091 25.7712 24.5249 25.4554C25.1584 24.8221 25.1584 23.7983 24.5249 23.1651L14.7904 13.4303Z' fill='black' fill-opacity='0.3'/%3e%3c/svg%3e ")
-      padding: 0
-      top: 30px
-      right: 30px
-      @media (max-width: 1200px)
-        top: 20px
-        right: 20px
-      svg
-        display: none
-
-
-.modal_window
-  display: none
-  +border-radius(20px)
   .h2, h2
     font-family: $Montserrat-SemiBold
     text-align: center
@@ -3810,14 +3897,14 @@ textarea
 #reviewStars-input
   label
     &:hover
-      background: url(../img/icons/r_star.svg)
+      background: url(../img/icons/r_star_active.svg)
       width: 30px
       height: 28px
 #reviewStars-input
   label
     &:hover
       ~ label
-        background: url(../img/icons/r_star.svg)
+        background: url(../img/icons/r_star_active.svg)
         width: 30px
         height: 28px
 #reviewStars-input
@@ -4036,3 +4123,47 @@ textarea
         width: 100%
 
 
+.h_user_dropdown
+  width: 70px
+  height: 70px
+  background: #fff
+  +border-radius(5px)
+  position: relative
+  border: 0
+  margin-right: 20px
+  +flex
+  +ai-center
+  +j-center
+  @media (max-width: 1300px)
+    width: 53px
+    height: 53px
+  @media (max-width: 575px)
+    width: 43px
+    height: 43px
+    margin-right: 10px
+  img
+    max-width: 24px
+  &.act
+    img
+      display: none
+    &:before, &:after
+      +b_a
+      width: 25px
+      height: 2px
+      background: $blue
+      +m_a
+    &:before
+      +transform(rotate(45deg))
+    &:after
+      +transform(rotate(-45deg))
+
+
+
+  @media (min-width: 1101px)
+    display: none
+
+
+.h_col_center
+  @media (max-width: 1100px)
+    +flex
+    +j-end

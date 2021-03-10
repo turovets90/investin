@@ -1,10 +1,9 @@
 $(document).ready(function(){
 
-
-
-
     $('.h_search_toggler').click(function () {
         $(this).toggleClass('open');
+        $('.h_col_right').removeClass('open');
+        $('.h_user_dropdown').removeClass('act');
         return false;
     });
 
@@ -18,6 +17,13 @@ $(document).ready(function(){
     $('.dropdown_toggler').click(function () {
         $(this).toggleClass('act');
         $(this).next().toggleClass('open');
+        return false;
+    });
+
+    $('.h_user_dropdown').click(function () {
+        $(this).toggleClass('act');
+        $('.h_col_right').toggleClass('open');
+        $('.h_search_toggler').removeClass('open');
         return false;
     });
 
@@ -156,6 +162,16 @@ $(document).ready(function(){
                 $(this).addClass('error');
             }
         });
+    });
+
+
+    $('.popup-with-form').magnificPopup({
+        // Delay in milliseconds before popup is removed
+        removalDelay: 300,
+
+        // Class that is added to popup wrapper and background
+        // make it unique to apply your CSS animations just to this exact popup
+        //mainClass: 'mfp-fade'
     });
 
 });
